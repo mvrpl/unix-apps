@@ -10,6 +10,8 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 
 ## Applications
 
+- [x] [chsht](https://github.com/mvrpl/Terminal-Cheat-Sheet)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
