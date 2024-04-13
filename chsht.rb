@@ -7,10 +7,10 @@ class Chsht < Formula
     depends_on "less"
     
     def install
-        puts "test"
+        system "echo"
     end
     
     test do
-        puts "test"
+        system "echo"
     end
 end
