@@ -16,6 +16,12 @@ class Chsht < Formula
     depends_on "less"
     
     def install
-        bin.install "chsht-linux-amd64" => "chsht"
+        if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+            bin.install "chsht-linux-amd64" => "chsht"
+        end
+
+        if OS.mac? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+            bin.install "chsht-macos-arm64" => "chsht"
+        end
     end
 end
