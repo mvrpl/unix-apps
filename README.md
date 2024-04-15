@@ -10,7 +10,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 
 ## Applications
 
-- [x] [chsht](https://github.com/mvrpl/Terminal-Cheat-Sheet)
+- [x] [chsht](https://github.com/mvrpl/Terminal-Cheat-Sheet) `brew install chsht`
 
 ## Contributing
 
