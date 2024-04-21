@@ -1,4 +1,4 @@
-class Chsht < Formula
+class Rusync < Formula
     desc "Minimalist rsync implementation in Rust"
     homepage "https://github.com/your-tools/rusync"
     license "BSD 3-Clause"
