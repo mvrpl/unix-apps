@@ -10,10 +10,8 @@ class Chsht < Formula
     end
 
     if OS.mac?
-        if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-            url "https://github.com/your-tools/rusync/releases/download/#{version}/rusync-osx"
-            sha256 "7ee8ef70c26cb8bff6d967d5a01dc211c2125232deb4aa0b71d543b0479fd8e8"
-        end
+        url "https://github.com/your-tools/rusync/releases/download/#{version}/rusync-osx"
+        sha256 "7ee8ef70c26cb8bff6d967d5a01dc211c2125232deb4aa0b71d543b0479fd8e8"
     end
     
     def install
@@ -22,9 +20,7 @@ class Chsht < Formula
         end
 
         if OS.mac?
-            if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-                bin.install "rusync-osx" => "rusync"
-            end
+            bin.install "rusync-osx" => "rusync"
         end
     end
 end
