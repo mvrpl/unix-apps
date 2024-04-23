@@ -6,7 +6,7 @@ class Chsht < Formula
 
     if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
         url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/#{version}/chsht-linux-amd64"
-        sha256 "99cdcaf626a0eed1c00cfe350e9655b69f05818342ac69a4f1aa2e7d26e22303"
+        sha256 "e6b64c2fc34d58b8d21e9a94624adaa0c7f60ab4d0c4c45033026725a58d3fa2"
     end
 
     if OS.mac?
@@ -18,7 +18,7 @@ class Chsht < Formula
             url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/#{version}/chsht-macos-amd64"
         end
 
-        sha256 "113ddb0b26503b66860b1295b73252f36ce0939bb581af2b223dcbae64784dd1"
+        sha256 "6c03fc9d6ce86f80df7e260558adae166c2060b38f0497a2a48b489a98271233"
     end
     
     depends_on "less"
