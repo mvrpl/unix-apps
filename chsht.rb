@@ -2,7 +2,7 @@ class Chsht < Formula
     desc "Cheat Sheets on Terminal"
     homepage "https://github.com/mvrpl/Terminal-Cheat-Sheet"
     license "MIT"
-    version "0.2.9"
+    version "0.3.0"
 
     livecheck do
         url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/latest.json"
@@ -14,19 +14,19 @@ class Chsht < Formula
 
     if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
         url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/#{version}/chsht-linux-amd64"
-        sha256 "e6b64c2fc34d58b8d21e9a94624adaa0c7f60ab4d0c4c45033026725a58d3fa2"
+        sha256 "2b34942a2620990b3585c4a1b3b37b75142336361814c67ce833e97bc8005cdf"
     end
 
     if OS.mac?
         if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
             url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/#{version}/chsht-macos-arm64"
+            sha256 "cdeb24002c70496796c742591403d706a926d3d9a33ae0cde397546c77840024"
         end
 
         if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
             url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/#{version}/chsht-macos-amd64"
+            sha256 "88f813f628131a9b347cd817c75208be436244cb4c319ba1edef3e7a337f3fdd"
         end
-
-        sha256 "6c03fc9d6ce86f80df7e260558adae166c2060b38f0497a2a48b489a98271233"
     end
     
     depends_on "less"
