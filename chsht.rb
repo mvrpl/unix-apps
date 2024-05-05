@@ -5,8 +5,11 @@ class Chsht < Formula
     version "0.2.9"
 
     livecheck do
-        url :stable
+        url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/latest.json"
         regex(/^v?(\d+(?:\.\d+)+)$/i)
+        strategy :json do |json, regex|
+            json["version"][regex, 1]
+        end
     end
 
     if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
