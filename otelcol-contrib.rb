@@ -4,6 +4,12 @@ class OtelColContrib < Formula
     license "Apache License 2.0"
     version "0.100.0"
 
+    livecheck do
+        url :homepage
+        regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
+        strategy :github_latest
+    end
+
     if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
         url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v#{version}/otelcol-contrib_#{version}_linux_amd64.tar.gz"
         sha256 "58474c2ae87fbc41a8acf20bfd3a4b82f2b13a26f767090062e42a6a857bfb89"
