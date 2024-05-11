@@ -14,18 +14,18 @@ class Chsht < Formula
 
     if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
         url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/#{version}/chsht-linux-amd64"
-        sha256 "777cba57700514285a9e1c9f37c394224a7f25aecfc87782cf03e942074254ad"
+        sha256 "c6bb7006d87b052edff370500413281db07808e929ca1fb8c2c0b9061701cc6c"
     end
 
     if OS.mac?
         if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
             url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/#{version}/chsht-macos-arm64"
-            sha256 "492b0b597ee75b906e64a679988ef1b564c19c53c87f527f4ae22927a1329dcf"
+            sha256 "0399422a638b04021fa0fd6f362d7202b2b5c9e6ad1f4c314e9db7601e9e106d"
         end
 
         if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
             url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/#{version}/chsht-macos-amd64"
-            sha256 "e3d2b47142b1ae530fd8f15c91ab7c2960404f782643b9a443c5a99db69a5f6e"
+            sha256 "64c52f54a6e2b6d0d81ad27043159f1a201c7fd1e3243b2ccabe3d7726b160f1"
         end
     end
     
