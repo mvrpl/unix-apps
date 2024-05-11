@@ -1,4 +1,4 @@
-class OtelColContrib < Formula
+class OtelcolContrib < Formula
     desc "OpenTelemetry Collector Contrib"
     homepage "https://github.com/open-telemetry/opentelemetry-collector-releases"
     license "Apache License 2.0"
