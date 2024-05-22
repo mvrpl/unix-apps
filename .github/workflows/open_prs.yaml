@@ -31,12 +31,12 @@ jobs:
       - name: Livecheck darwin
         if: matrix.runner == 'macos-latest'
         run: |
-          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
-          brew install jq
-          bash <(/opt/homebrew/bin/brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"')
+          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
+          brew install jq &&
+          bash <(/opt/homebrew/bin/brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "/opt/homebrew/bin/brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"')
       - name: Livecheck linux
         if: matrix.runner == 'ubuntu-latest'
         run: |
-          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
-          brew install jq
-          bash <(/opt/homebrew/bin/brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"')
+          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
+          brew install jq &&
+          bash <(/home/linuxbrew/.linuxbrew/bin/brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "/home/linuxbrew/.linuxbrew/bin/brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"')
