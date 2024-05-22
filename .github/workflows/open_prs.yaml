@@ -30,6 +30,8 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
       - name: Livecheck darwin
         if: matrix.runner == 'macos-latest'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
@@ -37,6 +39,8 @@ jobs:
           brew bump-formula-pr otelcol-contrib --version=0.101.0 --no-fork
       - name: Livecheck linux
         if: matrix.runner == 'ubuntu-latest'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
