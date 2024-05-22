@@ -1,8 +1,8 @@
 class Chsht < Formula
     desc "Cheat Sheets on Terminal"
     homepage "https://github.com/mvrpl/Terminal-Cheat-Sheet"
-    license "MIT"
     version "0.3.0"
+    license "MIT"
 
     livecheck do
         url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/latest.json"
