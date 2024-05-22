@@ -17,7 +17,7 @@ class OtelcolContrib < Formula
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.101.0/otelcol-contrib_0.100.0_darwin_arm64.tar.gz"
+      url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.100.0/otelcol-contrib_0.100.0_darwin_arm64.tar.gz"
       sha256 "320e5a3c282759238248a9dbb0a39980865713e4335685e1990400436a57cffa"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
