@@ -31,6 +31,7 @@ jobs:
       - name: Livecheck darwin
         if: matrix.runner == 'macos-latest'
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
@@ -39,6 +40,7 @@ jobs:
       - name: Livecheck linux
         if: matrix.runner == 'ubuntu-latest'
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
