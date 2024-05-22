@@ -4,7 +4,7 @@ formula="$1"
 cversion="$2"
 lversion="$3"
 
-formulas_brew_path=$(brew --repository mvrpl/unix-apps)
+formulas_brew_path="."
 
 cyan=$(tput setaf 6)
 red=$(tput setaf 1)

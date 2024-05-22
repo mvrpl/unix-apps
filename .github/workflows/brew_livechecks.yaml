@@ -23,5 +23,6 @@ jobs:
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "\(.formula) \(.version.current) \(.version.latest)"' | xargs -n1 bash -c './update_formula.bash $@' bash &&
-          cd $(brew --repository mvrpl/unix-apps) && git commit -a -m "Updates" && git push origin main
+          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "\(.formula) \(.version.current) \(.version.latest)"' | xargs -n1 bash -c './update_formula.bash $@' bash
+      - name: Git push
+        uses: stefanzweifel/git-auto-commit-action@v5
