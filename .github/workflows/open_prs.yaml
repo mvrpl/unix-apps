@@ -39,7 +39,9 @@ jobs:
           git config --global user.name "Marcos Lima" &&
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest)"' | xargs -n1 bash -c '$1' bash
+          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1' bash;
+          cd $(brew --repository mvrpl/unix-apps) &&
+          git status
       - name: Livecheck linux
         if: matrix.runner == 'ubuntu-latest'
         env:
@@ -51,4 +53,6 @@ jobs:
           git config --global user.name "Marcos Lima" &&
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest)"' | xargs -n1 bash -c '$1' bash
+          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1' bash ;
+          cd $(brew --repository mvrpl/unix-apps) &&
+          git status
