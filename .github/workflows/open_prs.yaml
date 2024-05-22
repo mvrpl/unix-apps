@@ -33,10 +33,10 @@ jobs:
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1' bash
+          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"'
       - name: Livecheck linux
         if: matrix.runner == 'ubuntu-latest'
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1' bash
+          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"'
