@@ -35,8 +35,7 @@ jobs:
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' &&
-          brew bump-formula-pr otelcol-contrib --version=0.101.0 --no-fork
+          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1' bash
       - name: Livecheck linux
         if: matrix.runner == 'ubuntu-latest'
         env:
@@ -44,5 +43,4 @@ jobs:
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' &&
-          brew bump-formula-pr otelcol-contrib --version=0.101.0 --no-fork
+          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1' bash
