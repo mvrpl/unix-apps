@@ -1,3 +1,5 @@
+[![Livechecks tap mvrpl/unix-apps](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml/badge.svg?branch=main)](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml)
+
 # Homebrew Repo Manifests
 
 Applications not found in main or extras
