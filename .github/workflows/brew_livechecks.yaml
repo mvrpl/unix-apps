@@ -29,7 +29,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           create_branch: true
-          branch: linux
+          branch: updates
   livecheck-mac-arm:
     runs-on: macos-latest
     steps:
@@ -53,7 +53,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           create_branch: true
-          branch: mac-arm
+          branch: updates
   livecheck-mac-intel:
     runs-on: macos-13
     steps:
@@ -77,4 +77,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           create_branch: true
-          branch: mac-intel
+          branch: updates
