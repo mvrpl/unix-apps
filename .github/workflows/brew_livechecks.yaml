@@ -26,9 +26,9 @@ jobs:
           brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_branch: true
           branch: linux
   livecheck-mac-arm:
     runs-on: macos-latest
@@ -50,9 +50,9 @@ jobs:
           brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_branch: true
           branch: mac-arm
   livecheck-mac-intel:
     runs-on: macos-13
@@ -74,7 +74,7 @@ jobs:
           brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          create_branch: true
           branch: mac-intel
