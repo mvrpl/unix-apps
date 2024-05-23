@@ -60,8 +60,22 @@ jobs:
           brew install jq &&
           brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
-  git-pushes:
+  git-push-linux:
     runs-on: ubuntu-latest
+    if: ${{ always() }}
+    needs: [livecheck-linux, livecheck-mac-arm, livecheck-mac-intel]
+    steps:
+      - name: Git push
+        uses: stefanzweifel/git-auto-commit-action@v5
+  git-push-mac-intel:
+    runs-on: macos-13
+    if: ${{ always() }}
+    needs: [livecheck-linux, livecheck-mac-arm, livecheck-mac-intel]
+    steps:
+      - name: Git push
+        uses: stefanzweifel/git-auto-commit-action@v5
+  git-push-mac-arm:
+    runs-on: macos-latest
     if: ${{ always() }}
     needs: [livecheck-linux, livecheck-mac-arm, livecheck-mac-intel]
     steps:
