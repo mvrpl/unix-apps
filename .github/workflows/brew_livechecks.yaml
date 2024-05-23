@@ -6,7 +6,7 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  livecheck:
+  livecheck-linux:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,13 +16,14 @@ jobs:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
-      - name: Livecheck brew
+      - name: Livecheck brew linux
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "\(.formula) \(.version.current) \(.version.latest)"' | xargs -n1 bash -c './update_formula.bash $@' bash
+          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1' bash ;
+          mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Git push
         uses: stefanzweifel/git-auto-commit-action@v5
