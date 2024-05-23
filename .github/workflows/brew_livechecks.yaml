@@ -28,7 +28,9 @@ jobs:
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
+          file_pattern: '*.rb'
           create_branch: true
+          push_options: '--force'
           branch: updates
   livecheck-mac-arm:
     runs-on: macos-latest
@@ -52,7 +54,9 @@ jobs:
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
+          file_pattern: '*.rb'
           create_branch: true
+          push_options: '--force'
           branch: updates
   livecheck-mac-intel:
     runs-on: macos-13
@@ -76,5 +80,7 @@ jobs:
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
+          file_pattern: '*.rb'
           create_branch: true
+          push_options: '--force'
           branch: updates
