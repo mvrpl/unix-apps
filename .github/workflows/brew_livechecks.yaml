@@ -33,6 +33,7 @@ jobs:
           branch: updates
   livecheck-mac-arm:
     runs-on: macos-latest
+    needs: livecheck-linux
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -58,6 +59,7 @@ jobs:
           branch: updates
   livecheck-mac-intel:
     runs-on: macos-13
+    needs: [livecheck-linux, livecheck-mac-arm]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
