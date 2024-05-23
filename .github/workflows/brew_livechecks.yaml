@@ -50,7 +50,8 @@ jobs:
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
           brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
-          mv $(brew --repository mvrpl/unix-apps)/*.rb .
+          mv $(brew --repository mvrpl/unix-apps)/*.rb . &&
+          git pull
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -76,7 +77,8 @@ jobs:
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
           brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
-          mv $(brew --repository mvrpl/unix-apps)/*.rb .
+          mv $(brew --repository mvrpl/unix-apps)/*.rb . &&
+          git pull
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
