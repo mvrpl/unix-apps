@@ -15,6 +15,8 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [x] [chsht](https://github.com/mvrpl/Terminal-Cheat-Sheet) `brew install chsht`
 - [x] [rusync](https://github.com/your-tools/rusync) `brew install rusync`
 - [x] [otelcol-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib) `brew install otelcol-contrib`
+- [x] [rcon](https://github.com/gorcon/rcon-cli) `brew install rcon`
+- [x] [seaweedfs](https://github.com/seaweedfs/seaweedfs) `brew install seaweedfs`
 
 ## Contributing
 
