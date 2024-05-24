@@ -1,12 +1,28 @@
 name: Livechecks tap mvrpl/unix-apps
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'
 
 jobs:
+  brew-livecheck:
+    runs-on: ubuntu-latest
+    outputs:
+      json-apps: ${{ steps.brew-checkver.outputs.apps }}
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Livecheck brew
+        id: brew-checkver
+        run: |
+          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
+          brew install jq &&
+          echo "apps=$(brew livecheck --tap mvrpl/unix-apps --json | jq -c '.')" >> "$GITHUB_OUTPUT"
   livecheck-linux:
     runs-on: ubuntu-latest
+    needs: [brew-livecheck]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,7 +38,7 @@ jobs:
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
+          echo ${{needs.brew-livecheck.outputs.json-apps}} | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -32,6 +48,7 @@ jobs:
           branch: updates-linux
   livecheck-mac-arm:
     runs-on: macos-latest
+    needs: [brew-livecheck]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,7 +64,7 @@ jobs:
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
+          echo ${{needs.brew-livecheck.outputs.json-apps}} | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -57,6 +74,7 @@ jobs:
           branch: updates-mac-arm
   livecheck-mac-intel:
     runs-on: macos-13
+    needs: [brew-livecheck]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -72,7 +90,7 @@ jobs:
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          brew livecheck --tap mvrpl/unix-apps --json | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
+          echo ${{needs.brew-livecheck.outputs.json-apps}} | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
