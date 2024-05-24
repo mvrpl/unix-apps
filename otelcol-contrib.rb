@@ -1,7 +1,7 @@
 class OtelcolContrib < Formula
   desc "OpenTelemetry Collector Contrib"
   homepage "https://github.com/open-telemetry/opentelemetry-collector-releases"
-  version "0.100.0"
+  version "0.101.0"
   license "Apache-2.0"
 
   livecheck do
@@ -11,8 +11,8 @@ class OtelcolContrib < Formula
   end
 
   if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.100.0/otelcol-contrib_0.100.0_linux_amd64.tar.gz"
-    sha256 "d2311243142bb2e9681d6f302f6d3c0c385a876a5dcdb7910d3092b3bcbd9fb1"
+    url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.101.0/otelcol-contrib_0.101.0_linux_amd64.tar.gz"
+    sha256 "d2311243142bb2e9681d6f302f6d3c0c385a876a5dcdb7910d3092b3bcbd9fbc"
   end
 
   if OS.mac?
