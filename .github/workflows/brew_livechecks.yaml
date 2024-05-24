@@ -34,11 +34,12 @@ jobs:
       - name: Livecheck brew linux
         id: brew-linux
         env:
+          APPS: ${{needs.brew-livecheck.outputs.json-apps}}
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          echo ${{needs.brew-livecheck.outputs.json-apps}} | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -60,11 +61,12 @@ jobs:
       - name: Livecheck brew mac-arm
         id: brew-mac-arm
         env:
+          APPS: ${{needs.brew-livecheck.outputs.json-apps}}
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          echo ${{needs.brew-livecheck.outputs.json-apps}} | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -86,11 +88,12 @@ jobs:
       - name: Livecheck brew mac-intel
         id: brew-mac-intel
         env:
+          APPS: ${{needs.brew-livecheck.outputs.json-apps}}
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          echo ${{needs.brew-livecheck.outputs.json-apps}} | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
