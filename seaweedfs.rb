@@ -1,4 +1,4 @@
-class Seaweed < Formula
+class Seaweedfs < Formula
     desc "SeaweedFS is a fast distributed storage system for blobs, objects, files, and data lake, for billions of files."
     homepage "https://github.com/seaweedfs/seaweedfs"
     version "3.67"
