@@ -1,5 +1,5 @@
 class Speedtest < Formula
-  desc "Runs your internet connection speed tests."
+  desc "Runs your internet connection speed tests"
   homepage "https://github.com/mvrpl/speed-test"
   version "1.0"
   license "GPL-3.0"
