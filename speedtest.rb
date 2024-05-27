@@ -22,8 +22,8 @@ class Speedtest < Formula
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/speed-test/releases/download/1.0/speed-test_Darwin_x86_64.tar.gz"
-      sha256 "39f39c73c7989c5f667a2c17353d85b45ca4d24545812c2f06ec1a7ef70bdd43"
+      url "https://github.com/mvrpl/speed-test/releases/download/1.5/speed-test_Darwin_x86_64.tar.gz"
+      sha256 "41e024a1030d087424ad51022e425a6fa07d63fbaafbe142638ffb1ed1d698de"
     end
   end
 
