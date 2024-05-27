@@ -1,7 +1,7 @@
 class Speedtest < Formula
   desc "Runs your internet connection speed tests"
   homepage "https://github.com/mvrpl/speed-test"
-  version "1.0"
+  version "1.5"
   license "GPL-3.0"
 
   livecheck do
@@ -11,8 +11,8 @@ class Speedtest < Formula
   end
 
   if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvrpl/speed-test/releases/download/1.0/speed-test_Linux_x86_64.tar.gz"
-    sha256 "a7006243ebfe2b5a5c6cf8f9f350e391fc5ceffd6028a0915cd032403de3d8c4"
+    url "https://github.com/mvrpl/speed-test/releases/download/1.5/speed-test_Linux_x86_64.tar.gz"
+    sha256 "a198aab7a460ff2beccc5c64f5e6c438191d357fb1946694a4287179cee33522"
   end
 
   if OS.mac?
