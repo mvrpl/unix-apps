@@ -1,5 +1,5 @@
 class Rcon < Formula
-  desc "RCON client for executing queries on game server."
+  desc "RCON client for executing queries on game server"
   homepage "https://github.com/gorcon/rcon-cli"
   version "0.10.3"
   license "MIT"
