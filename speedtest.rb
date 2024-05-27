@@ -17,8 +17,8 @@ class Speedtest < Formula
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/speed-test/releases/download/1.0/speed-test_Darwin_arm64.tar.gz"
-      sha256 "94c4d876f6785e27735d3497cb73afa1f1851f111803c70eb0b2f0f754647531"
+      url "https://github.com/mvrpl/speed-test/releases/download/1.5/speed-test_Darwin_arm64.tar.gz"
+      sha256 "7639208be96bc4090eec82ae3920b1362a10cde3c73e67ee65dea2aa9b19d8ae"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
