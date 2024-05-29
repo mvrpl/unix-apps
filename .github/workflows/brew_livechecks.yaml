@@ -38,7 +38,7 @@ jobs:
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-audit --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -65,7 +65,7 @@ jobs:
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-audit --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -92,7 +92,7 @@ jobs:
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
           brew install jq &&
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-audit --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
           mv $(brew --repository mvrpl/unix-apps)/*.rb .
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
