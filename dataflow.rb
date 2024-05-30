@@ -17,8 +17,8 @@ class Dataflow < Formula
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/dataflow/releases/download/0.1.0/dataflow-darwin-arm64"
-      sha256 "64139e9d674a3ed4a48c51fc445899f5cdd45fc64676ad364fbaa6349b64068f"
+      url "https://github.com/mvrpl/dataflow/releases/download/0.1.5/dataflow-darwin-arm64"
+      sha256 "b403e25b91c311e3ab2f77930378cfe6a4e9bd578f08c5699cdad1841f795d8f"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
