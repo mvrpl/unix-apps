@@ -1,7 +1,7 @@
 class Dataflow < Formula
   desc "ETL configurable written in Rust"
   homepage "https://github.com/mvrpl/dataflow"
-  version "0.1.0"
+  version "0.2.5"
   license "GPL-3.0"
 
   livecheck do
@@ -10,36 +10,26 @@ class Dataflow < Formula
     strategy :github_latest
   end
 
-  if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvrpl/dataflow/releases/download/0.1.0/dataflow-linux-amd64"
-    sha256 "f889e62e6a71b6331bd11c605ba7beb44218fc3f39f4227afa2d2d51e28b8756"
+  if OS.linux? 
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.1/dataflow-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "775fc350295504dadb7967b1a3553ad03129a7b35bcf9076ffc6ebdee55e0cff"
+    end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/dataflow/releases/download/0.1.0/dataflow-darwin-arm64"
-      sha256 "64139e9d674a3ed4a48c51fc445899f5cdd45fc64676ad364fbaa6349b64068f"
+      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.1/dataflow-aarch64-apple-darwin.tar.gz"
+      sha256 "cb98b6a9249072d89f559cf75f6c370884286351b9ecd9748f9b7eccb4db38a6"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/dataflow/releases/download/0.1.0/dataflow-darwin-amd64"
-      sha256 "84b583d32f218ba6192e4fa9cb4c9a379abfca01b4e0ee239d5a6bcfb4b9abd0"
+      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.1/dataflow-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "0378fec8a02b8dafe9562125dd64362daf36782e097497406c11e08c74dab495"
     end
   end
 
   def install
-    if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      bin.install "dataflow-linux-amd64" => "dataflow"
-    end
-
-    if OS.mac?
-      if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        bin.install "dataflow-darwin-arm64" => "dataflow"
-      end
-
-      if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-        bin.install "dataflow-darwin-amd64" => "dataflow"
-      end
-    end
+    bin.install "dataflow"
   end
 end
