@@ -13,19 +13,19 @@ class Dataflow < Formula
   if OS.linux? 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.1/dataflow-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "775fc350295504dadb7967b1a3553ad03129a7b35bcf9076ffc6ebdee55e0cff"
+      sha256 "21b0aa8e874cea49036d1440053e8fde15ed2533bcbb48b75d9b24180eb0fd66"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.1/dataflow-aarch64-apple-darwin.tar.gz"
-      sha256 "cb98b6a9249072d89f559cf75f6c370884286351b9ecd9748f9b7eccb4db38a6"
+      sha256 "9b856b136b9e7041a5c50c89187cf7f4809550b79f47be37fb7f8f87a8eaa12a"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.1/dataflow-x86_64-apple-darwin.tar.gz"
-      sha256 "0378fec8a02b8dafe9562125dd64362daf36782e097497406c11e08c74dab495"
+      sha256 "394dc24f87bf4b20d7f1e3b962a87c3844c53c51215120be4ab421ddc36caaaa"
     end
   end
 
