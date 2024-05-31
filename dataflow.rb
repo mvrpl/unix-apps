@@ -1,7 +1,7 @@
 class Dataflow < Formula
   desc "ETL configurable written in Rust"
   homepage "https://github.com/mvrpl/dataflow"
-  version "0.2.5"
+  version "0.2.1"
   license "GPL-3.0"
 
   livecheck do
