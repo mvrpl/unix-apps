@@ -5,9 +5,11 @@ class Dataflow < Formula
   license "GPL-3.0"
 
   livecheck do
-    url :homepage
-    regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
-    strategy :github_latest
+    url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/latest.json"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :json do |json, regex|
+      json["version"][regex, 1]
+    end
   end
 
   if OS.linux? 
