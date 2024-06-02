@@ -27,6 +27,11 @@ class Dataflow < Formula
       url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.6/dataflow-x86_64-apple-darwin.tar.gz"
       sha256 "b90422e3aa073f3a8bb8565b3a4523190ca117811a6966fc06561d3614bab35c"
     end
+
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.1/dataflow-x86_64-apple-darwin.tar.gz"
+      sha256 "failed"
+    end
   end
 
   def install
