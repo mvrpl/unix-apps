@@ -1,7 +1,7 @@
 class Dataflow < Formula
   desc "ETL configurable written in Rust"
   homepage "https://bitbucket.org/mvrpl_br/dataflow"
-  version "0.2.6"
+  version "0.2.8"
   license "GPL-3.0"
 
   livecheck do
@@ -14,8 +14,8 @@ class Dataflow < Formula
 
   if OS.linux? 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.6/dataflow-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "7a13336580ba0dbb402204df5a630f59c132e8d4789c9ad859fff65eb7375d7f"
+      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.8/dataflow-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "0a6be28fd5afeab04a195d0a913d60dafcce5eb2aea2ca6d785d3d70460cc96d"
     end
   end
 
