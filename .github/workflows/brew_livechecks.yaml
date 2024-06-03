@@ -30,8 +30,7 @@ jobs:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
-      - name: Livecheck brew linux
-        id: brew-linux
+      - name: Updates
         env:
           APPS: ${{needs.brew-livecheck.outputs.json-apps}}
         run: |
