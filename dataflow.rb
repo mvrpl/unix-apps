@@ -21,13 +21,13 @@ class Dataflow < Formula
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.6/dataflow-aarch64-apple-darwin.tar.gz"
-      sha256 "88e957d6b630d97917486ca22b18ed37a6e18eddf68f23b4b4c9c2a1f31125c8"
+      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.8/dataflow-aarch64-apple-darwin.tar.gz"
+      sha256 "da041a2630a8e6822d550a830fe5c6346e0e970f15bcc4e0143c219d9738de5e"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.6/dataflow-x86_64-apple-darwin.tar.gz"
-      sha256 "b90422e3aa073f3a8bb8565b3a4523190ca117811a6966fc06561d3614bab35c"
+      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.8/dataflow-x86_64-apple-darwin.tar.gz"
+      sha256 "d365c97042e28e00b17482cd15035b746e19ccce42bc1fbe8d9566395ae09601"
     end
   end
 
