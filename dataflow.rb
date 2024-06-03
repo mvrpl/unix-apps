@@ -26,8 +26,8 @@ class Dataflow < Formula
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.6/dataflow-x86_64-apple-darwin.tar.gz"
-      sha256 "b90422e3aa073f3a8bb8565b3a4523190ca117811a6966fc06561d3614bab35c"
+      url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.2.8/dataflow-x86_64-apple-darwin.tar.gz"
+      sha256 "d365c97042e28e00b17482cd15035b746e19ccce42bc1fbe8d9566395ae09601"
     end
   end
 
