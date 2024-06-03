@@ -16,8 +16,8 @@ jobs:
       - name: Livecheck brew
         id: brew-checkver
         run: |
-          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
-          brew install jq &&
+          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
+          brew install jq
           echo "apps=$(brew livecheck --tap mvrpl/unix-apps --json | jq -c '.')" >> "$GITHUB_OUTPUT"
   livecheck-linux:
     runs-on: ubuntu-latest
@@ -34,98 +34,16 @@ jobs:
         id: brew-linux
         env:
           APPS: ${{needs.brew-livecheck.outputs.json-apps}}
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
-          brew install jq &&
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-audit --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
-          mv $(brew --repository mvrpl/unix-apps)/*.rb .
+          sudo apt install -y pcregrep
+          brew install jq
+          update_version () { formula=$1;version=$2;sed -i 's/(v?)[0-9]+\.[0-9]+(\.[0-9]+)?/\1'$version'/g' ./${formula}.rb; }
+          export -f update_version
+          update_hashs () { formula=$1; paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./${formula}.rb) | xargs -l bash -c 'hash=$(curl -sL $1 | sha256sum | cut -d " " -f 1);sed -i "s/$2/$hash/g" ./${formula}.rb' bash; }
+          export -f update_hashs
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) ; update_hashs \(.formula)"' | xargs -n1 bash -c '$1' bash
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           file_pattern: '*.rb'
-          create_branch: true
-          branch: updates-linux
-  livecheck-mac-arm:
-    runs-on: macos-latest
-    needs: [brew-livecheck]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-      - name: Livecheck brew mac-arm
-        id: brew-mac-arm
-        env:
-          APPS: ${{needs.brew-livecheck.outputs.json-apps}}
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
-          brew install jq &&
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-audit --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
-          mv $(brew --repository mvrpl/unix-apps)/*.rb .
-      - name: Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          file_pattern: '*.rb'
-          create_branch: true
-          branch: updates-mac-arm
-  livecheck-mac-intel:
-    runs-on: macos-13
-    needs: [brew-livecheck]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-      - name: Livecheck brew mac-intel
-        id: brew-mac-intel
-        env:
-          APPS: ${{needs.brew-livecheck.outputs.json-apps}}
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps &&
-          brew install jq &&
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "brew bump-formula-pr \(.formula) --version=\(.version.latest) --no-audit --no-fork"' | xargs -n1 bash -c '$1 2> /dev/null;exit 0' bash &&
-          mv $(brew --repository mvrpl/unix-apps)/*.rb .
-      - name: Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          file_pattern: '*.rb'
-          create_branch: true
-          branch: updates-mac-intel
-  git-merges:
-    runs-on: ubuntu-latest
-    needs: [livecheck-linux, livecheck-mac-intel, livecheck-mac-arm]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Merge Linux
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: updates-linux
-          target_branch: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Merge Mac ARM64
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: updates-mac-arm
-          target_branch: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Merge Mac AMD64
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: updates-mac-intel
-          target_branch: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
