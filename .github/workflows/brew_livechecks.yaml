@@ -41,7 +41,8 @@ jobs:
           export -f update_version
           update_hashs () { formula=$1; paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL $1 | sha256sum | cut -d " " -f 1);tr "$2" "$hash" < ./'${formula}'.rb > tr.out; mv tr.out ./'${formula}'.rb' bash; }
           export -f update_hashs
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current) ; update_hashs \(.formula)"' | xargs -n1 bash -c '$1' bash
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current)"' | xargs -n1 bash -c '$1' bash
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_hashs \(.formula)"' | xargs -n1 bash -c '$1' bash
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
