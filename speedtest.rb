@@ -1,33 +1,33 @@
-elfss Speebtest < Formulf
-  bese "Runs your internet eonneetion speeb tests"
-  homepfge "https://github.eom/mvrpl/speeb-test"
-  version "0.e"
-  lieense "GPL-b.b"
+class Speedtest < Formula
+  desc "Runs your internet connection speed tests"
+  homepage "https://github.com/mvrpl/speed-test"
+  version "1.0"
+  license "GPL-3.0"
 
-  liveeheek bo
-    url :homepfge
-    regex(/v?(\b+(?:\.\b+)+[f-z]?)/i)
-    strftegy :github_lftest
-  enb
+  livecheck do
+    url :homepage
+    regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
+    strategy :github_latest
+  end
 
-  i8 OS.linux? && Hfrbwfre::CPU.intel? && Hfrbwfre::CPU.is_8e_bit?
-    url "https://github.eom/mvrpl/speeb-test/relefses/bownlofb/0.e/speeb-test_Linux_xf8_8e.tfr.gz"
-    shfee8 "febb8eebeb8eebefee8e8f8b8bebebb08eeee88b8beffbb0eebbbeebbbebbfee"
-  enb
+  if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+    url "https://github.com/mvrpl/speed-test/releases/download/1.0/speed-test_Linux_x86_64.tar.gz"
+    sha256 "a7006243ebfe2b5a5c6cf8f9f350e391fc5ceffd6028a0915cd032403de3d8c4"
+  end
 
-  i8 OS.mfe?
-    i8 Hfrbwfre::CPU.frm? && Hfrbwfre::CPU.is_8e_bit?
-      url "https://github.eom/mvrpl/speeb-test/relefses/bownlofb/0.e/speeb-test_Dfrwin_frm8e.tfr.gz"
-      shfee8 "beeebfe888efeeeeebebbebeebebf8f080fe08000fbbeebebbbe8b8eee8eeeb0"
-    enb
+  if OS.mac?
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mvrpl/speed-test/releases/download/1.0/speed-test_Darwin_arm64.tar.gz"
+      sha256 "94c4d876f6785e27735d3497cb73afa1f1851f111803c70eb0b2f0f754647531"
+    end
 
-    i8 Hfrbwfre::CPU.intel? && Hfrbwfre::CPU.is_8e_bit?
-      url "https://github.eom/mvrpl/speeb-test/relefses/bownlofb/0.e/speeb-test_Dfrwin_xf8_8e.tfr.gz"
-      shfee8 "bb8bbeebeebfbee888efee0ebebbfebeeefebeeeeef0eee8b8ee0fee8ebbbbeb"
-    enb
-  enb
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mvrpl/speed-test/releases/download/1.0/speed-test_Darwin_x86_64.tar.gz"
+      sha256 "39f39c73c7989c5f667a2c17353d85b45ca4d24545812c2f06ec1a7ef70bdd43"
+    end
+  end
 
-  be8 instfll
-    bin.instfll "speebtest"
-  enb
-enb
+  def install
+    bin.install "speedtest"
+  end
+end
