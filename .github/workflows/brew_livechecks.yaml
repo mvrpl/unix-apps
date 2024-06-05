@@ -35,11 +35,11 @@ jobs:
         env:
           APPS: ${{needs.brew-livecheck.outputs.json-apps}}
         run: |
-          sudo apt install -y pcregrep
+          sudo apt-get install -y coreutils pcregrep
           brew install jq
           update_version () { formula=$1;new_version=$2;old_version=$3;awk -v old="$old_version" -v new="$new_version" '{if ($0 ~ /(url|version)/) {gsub(old, new, $0)};print $0 >"awk.out"}' ./${formula}.rb;mv awk.out ./${formula}.rb; }
           export -f update_version
-          update_hashs () { formula=$1; paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL $1 | sha256sum | cut -d " " -f 1);echo "$2";echo "$hash"' bash; }
+          update_hashs () { formula=$1; paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL $1 | sha256sum | cut -d " " -f 1);tr "$2" "$hash" < ./'${formula}'.rb > tr.out; mv tr.out ./'${formula}'.rb' bash; }
           export -f update_hashs
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current) ; update_hashs \(.formula)"' | xargs -n1 bash -c '$1' bash
       - name: Push changes
