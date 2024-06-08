@@ -19,6 +19,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [x] [rcon](https://github.com/gorcon/rcon-cli) `brew install rcon`
 - [x] [speedtest](https://github.com/mvrpl/speed-test) `brew install speedtest`
 - [x] [dataflow](https://github.com/mvrpl/dataflow) `brew install dataflow`
+- [x] [ssclient](https://github.com/neosmart/securestore-rs) `brew install ssclient`
 
 ## Contributing
 
