@@ -17,7 +17,8 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [x] [otelcol-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib) `brew install otelcol-contrib`
 - [x] [rcon](https://github.com/gorcon/rcon-cli) `brew install rcon`
 - [x] [speedtest](https://github.com/mvrpl/speed-test) `brew install speedtest`
-- [x] [dataflow](https://github.com/mvrpl/dataflow) `brew install dataflow`
+- [x] [dataflow](https://bitbucket.org/mvrpl_br/dataflow) `brew install dataflow`
+- [x] [ccp](https://github.com/mvrpl/ccp) `brew install ccp`
 - [x] [ssclient](https://github.com/neosmart/securestore-rs) `brew install ssclient`
 
 ## Contributing
