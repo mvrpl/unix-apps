@@ -1,7 +1,7 @@
 class Ccp < Formula
   desc "Chat Copy Protocol written in Rust"
   homepage "https://github.com/mvrpl/ccp"
-  version "0.1.1"
+  version "0.1.2"
   license "GPL-3.0"
 
   livecheck do
@@ -12,25 +12,25 @@ class Ccp < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/ccp/releases/download/0.1.1/ccp-linux-arm64"
-      sha256 "904724c5740e4396dadeafdbe224199086443db8b78c9cead1480c6ae7b41906"
+      url "https://github.com/mvrpl/ccp/releases/download/0.1.2/ccp-linux-arm64"
+      sha256 "045c07ce37d1dee155f59d86ee3ecc96455e1738f625a57210b61d7c475f357b"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/ccp/releases/download/0.1.1/ccp-linux-amd64"
-      sha256 "19010e9ae261b2ac2b16eb7055cf952f44cd19fd00547c7c1f41376c5a4ea272"
+      url "https://github.com/mvrpl/ccp/releases/download/0.1.2/ccp-linux-amd64"
+      sha256 "494ac234604f0ec65bc7a164a931202c5dd6ddd0bda0962ee996a6a8f2542568"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/ccp/releases/download/0.1.1/ccp-darwin-arm64"
-      sha256 "d1e55cac3490fb6002a73d5e0a9b7ab6d5f2c17dcdd9f2565251e0b7b8f18519"
+      url "https://github.com/mvrpl/ccp/releases/download/0.1.2/ccp-darwin-arm64"
+      sha256 "441860e6fbd603de735f915fe6c5f8c19348581c54020f513958b12b25807031"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/ccp/releases/download/0.1.1/ccp-darwin-amd64"
-      sha256 "0cc1c88fb3062fb2efc9625278e68dbcc98c9049139c044e777fa245e65c890b"
+      url "https://github.com/mvrpl/ccp/releases/download/0.1.2/ccp-darwin-amd64"
+      sha256 "67d1998eefbce2c0c666516522c936f79c2c97fa7238d44aca439dd90c0ff962"
     end
   end
 
