@@ -1,7 +1,7 @@
 class Ccp < Formula
   desc "Chat Copy Protocol written in Rust"
   homepage "https://github.com/mvrpl/ccp"
-  version "0.1.2"
+  version "0.1.1"
   license "GPL-3.0"
 
   livecheck do
