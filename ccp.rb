@@ -1,7 +1,7 @@
 class Ccp < Formula
   desc "Chat Copy Protocol written in Rust"
   homepage "https://github.com/mvrpl/ccp"
-  version "0.1.1"
+  version "0.1.2"
   license "GPL-3.0"
 
   livecheck do
@@ -13,12 +13,12 @@ class Ccp < Formula
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/mvrpl/ccp/releases/download/0.1.2/ccp-linux-arm64"
-      sha256 "045c07ce37d1dee155f59d86ee3ecc96455e1738f625a57210b61d7c475f357b"
+      sha256 "e3de7f43f76f2dd41b003fb585f5b11336288a5ff0f8bbc3a5640a0c3b8ef7b0"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/mvrpl/ccp/releases/download/0.1.2/ccp-linux-amd64"
-      sha256 "494ac234604f0ec65bc7a164a931202c5dd6ddd0bda0962ee996a6a8f2542568"
+      sha256 "b6df180cd11d8966e29415448753f6baea0d35b2ed06a924bc14260791247a25"
     end
   end
 
