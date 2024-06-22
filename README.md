@@ -1,3 +1,5 @@
+[![Linux-OS](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](#)
+[![Mac-OS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](#)  
 [![Livechecks tap mvrpl/unix-apps](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml/badge.svg?branch=main)](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml)
 
 # Homebrew Repo Manifests
