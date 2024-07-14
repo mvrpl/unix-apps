@@ -20,6 +20,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [x] [dataflow](https://bitbucket.org/mvrpl_br/dataflow) `brew install dataflow`
 - [x] [ccp](https://github.com/mvrpl/ccp) `brew install ccp`
 - [x] [ssclient](https://github.com/neosmart/securestore-rs) `brew install ssclient`
+- [x] [GoFM](https://github.com/ssnat/GoFM) `brew install gofm`
 
 ## Contributing
 
