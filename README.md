@@ -1,4 +1,6 @@
-[![Livechecks tap mvrpl/unix-apps](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml/badge.svg?branch=main)](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml)
+[![Livechecks tap mvrpl/unix-apps](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml/badge.svg?branch=main)](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml)  
+[![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)](#)
+[![macOS](https://img.shields.io/badge/Mac%20OS-000000?style=flat&logo=apple&logoColor=F0F0F0)](#)
 
 # Homebrew Repo Manifests
 
