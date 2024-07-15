@@ -1,4 +1,4 @@
-class GoFM < Formula
+class Gofm < Formula
   desc "GoFM is a cross-platform real-time audio streaming server for MP3 files"
   homepage "https://github.com/ssnat/GoFM"
   version "0.2.1"
