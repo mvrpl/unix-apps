@@ -23,6 +23,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [x] [ccp](https://github.com/mvrpl/ccp) `brew install ccp`
 - [x] [ssclient](https://github.com/neosmart/securestore-rs) `brew install ssclient`
 - [x] [GoFM](https://github.com/ssnat/GoFM) `brew install gofm`
+- [x] [GlareDB](https://github.com/GlareDB/glaredb) `brew install glaredb`
 
 ## Contributing
 
