@@ -1,4 +1,4 @@
-class GlareDB < Formula
+class GlareDb < Formula
   desc "An analytics DBMS for distributed data"
   homepage "https://github.com/GlareDB/glaredb"
   version "0.9.5"
