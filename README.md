@@ -1,4 +1,6 @@
-[![Livechecks tap mvrpl/unix-apps](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml/badge.svg?branch=main)](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml)
+[![Livechecks tap mvrpl/unix-apps](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml/badge.svg?branch=main)](https://github.com/mvrpl/unix-apps/actions/workflows/brew_livechecks.yaml)  
+[![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)](#)
+[![macOS](https://img.shields.io/badge/Mac%20OS-000000?style=flat&logo=apple&logoColor=F0F0F0)](#)
 
 # Homebrew Repo Manifests
 
@@ -18,6 +20,10 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [x] [rcon](https://github.com/gorcon/rcon-cli) `brew install rcon`
 - [x] [speedtest](https://github.com/mvrpl/speed-test) `brew install speedtest`
 - [x] [dataflow](https://bitbucket.org/mvrpl_br/dataflow) `brew install dataflow`
+- [x] [ccp](https://github.com/mvrpl/ccp) `brew install ccp`
+- [x] [ssclient](https://github.com/neosmart/securestore-rs) `brew install ssclient`
+- [x] [GoFM](https://github.com/ssnat/GoFM) `brew install gofm`
+- [x] [GlareDB](https://github.com/GlareDB/glaredb) `brew install glaredb`
 
 ## Contributing
 
