@@ -8,10 +8,12 @@ class Dataflow < Formula
 
   def install
     system "#{Formula["python@3.11"].opt_bin}/python3.11", "-m", "pip", "install", "dataflow"
-    (bin/"dataflow").write <<~EOS
-      #!/bin/bash
-      set -e
-      #{Formula["python@3.11"].opt_bin}/python3.11 -m dataflow $@
-    EOS
+    cd "dataflow" do
+      (bin/"dataflow").write <<~EOS
+        #!/bin/bash
+        set -e
+        #{Formula["python@3.11"].opt_bin}/python3.11 -m dataflow $@
+      EOS
+    end
   end
 end
