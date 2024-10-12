@@ -7,11 +7,11 @@ class Dataflow < Formula
   depends_on "python@3.11"
 
   def install
-    system "#{Formula["python@3.11"].opt_bin}", "-m", "pip", "install", "dataflow"
+    system "#{Formula["python@3.11"].opt_bin}/python3.11", "-m", "pip", "install", "dataflow"
     (bin/"dataflow").write <<~EOS
       #!/bin/bash
       set -e
-      #{Formula["python@3.11"].opt_bin} -m dataflow $@
+      #{Formula["python@3.11"].opt_bin}/python3.11 -m dataflow $@
     EOS
   end
 end
