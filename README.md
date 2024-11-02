@@ -24,6 +24,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [x] [ssclient](https://github.com/neosmart/securestore-rs) `brew install ssclient`
 - [x] [GoFM](https://github.com/ssnat/GoFM) `brew install gofm`
 - [x] [GlareDB](https://github.com/GlareDB/glaredb) `brew install glaredb`
+- [x] [Keyring](https://github.com/hwchen/keyring-rs) `brew install keyring-rs`
 
 ## Contributing
 
