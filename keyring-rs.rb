@@ -1,4 +1,4 @@
-class Keyringrs < Formula
+class KeyringRs < Formula
   desc "Cross-platform library and utility to manage passwords"
   homepage "https://github.com/hwchen/keyring-rs"
   version "3.6.1"
