@@ -14,18 +14,18 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 
 ## Applications
 
-- [x] [chsht](https://github.com/mvrpl/Terminal-Cheat-Sheet) `brew install chsht`
-- [x] [rusync](https://github.com/your-tools/rusync) `brew install rusync`
-- [x] [otelcol-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib) `brew install otelcol-contrib`
-- [x] [rcon](https://github.com/gorcon/rcon-cli) `brew install rcon`
-- [x] [speedtest](https://github.com/mvrpl/speed-test) `brew install speedtest`
-- [x] [dataflow](https://bitbucket.org/mvrpl_br/dataflow) `brew install dataflow`
-- [x] [ccp](https://github.com/mvrpl/ccp) `brew install ccp`
-- [x] [ssclient](https://github.com/neosmart/securestore-rs) `brew install ssclient`
-- [x] [GoFM](https://github.com/ssnat/GoFM) `brew install gofm`
-- [x] [GlareDB](https://github.com/GlareDB/glaredb) `brew install glaredb`
-- [x] [Keyring](https://github.com/hwchen/keyring-rs) `brew install keyring-rs`
-- [x] [KSSH](https://github.com/mvrpl/kssh) `brew install kssh`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.chsht&style=flat&label=chsht&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/chsht.rb) `brew install chsht`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.rusync&style=flat&label=rusync&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/rusync.rb) `brew install rusync`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.otelcol-contrib&style=flat&label=otelcol-contrib&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/otelcol-contrib.rb) `brew install otelcol-contrib`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.rcon&style=flat&label=rcon&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/rcon.rb) `brew install rcon`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.speedtest&style=flat&label=speedtest&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/speedtest.rb) `brew install speedtest`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.dataflow&style=flat&label=dataflow&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/dataflow.rb) `brew install dataflow`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.ccp&style=flat&label=ccp&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/ccp.rb) `brew install ccp`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.ssclient&style=flat&label=ssclient&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/ssclient.rb) `brew install ssclient`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.gofm&style=flat&label=gofm&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/gofm.rb) `brew install gofm`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.glaredb&style=flat&label=glaredb&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/glaredb.rb) `brew install glaredb`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.keyring-rs&style=flat&label=keyring-rs&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/keyring-rs.rb) `brew install keyring-rs`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.kssh&style=flat&label=kssh&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/kssh.rb) `brew install kssh`
 
 ## Contributing
 
