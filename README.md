@@ -25,6 +25,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [x] [GoFM](https://github.com/ssnat/GoFM) `brew install gofm`
 - [x] [GlareDB](https://github.com/GlareDB/glaredb) `brew install glaredb`
 - [x] [Keyring](https://github.com/hwchen/keyring-rs) `brew install keyring-rs`
+- [x] [KSSH](https://github.com/mvrpl/kssh) `brew install kssh`
 
 ## Contributing
 
