@@ -27,8 +27,6 @@ class Kssh < Formula
     end
   end
 
-  depends_on "less"
-
   def install
     if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       bin.install "kssh-linux-x64" => "kssh"
