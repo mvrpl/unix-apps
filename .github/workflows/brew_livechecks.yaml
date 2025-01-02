@@ -43,8 +43,11 @@ jobs:
           export -f update_hashs
           update_versions() { tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
           export -f update_versions
+          echo "update version"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current)"' | xargs -n1 bash -c '$1' bash
+          echo "update hashs"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_hashs \(.formula)"' | xargs -n1 bash -c '$1' bash
+          echo "update versions json"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_versions \(.formula) \(.version.latest)"' | xargs -n1 bash -c '$1' bash
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
