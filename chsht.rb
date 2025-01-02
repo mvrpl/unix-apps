@@ -5,11 +5,9 @@ class Chsht < Formula
   license "MIT"
 
   livecheck do
-    url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/chsht/releases/latest.json"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-    strategy :json do |json, regex|
-      json["version"][regex, 1]
-    end
+    url :homepage
+    regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
+    strategy :github_latest
   end
 
   if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
