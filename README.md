@@ -27,7 +27,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.keyring-rs&style=flat&label=keyring-rs&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/keyring-rs.rb) `brew install keyring-rs`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.kssh&style=flat&label=kssh&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/kssh.rb) `brew install kssh`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.fabric-ai&style=flat&label=fabric-ai&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/fabric-ai.rb) `brew install fabric-ai`
-- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.whatsapp&style=flat&label=whatsapp&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/whatsapp.rb) `brew install whatsapp`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.whatsapp&style=flat&label=whatsapp&color=%23DFC57B)](https://github.com/mvrpl/unix-apps/blob/main/whatsapp.rb) `brew install mvrpl/unix-apps/whatsapp`
 
 ## Contributing
 
