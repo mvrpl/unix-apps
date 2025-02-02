@@ -11,5 +11,6 @@
   "gofm": "0.2.1",
   "glaredb": "0.9.5",
   "keyring-rs": "3.6.1",
-  "fabric-ai": "1.4.131"
+  "fabric-ai": "1.4.131",
+  "whatsapp": "5.0.0"
 }
