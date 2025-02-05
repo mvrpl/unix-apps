@@ -2,7 +2,7 @@
   "kssh": "1.1.11",
   "chsht": "0.5.0",
   "rusync": "0.7.2",
-  "otelcol-contrib": "0.118.0",
+  "otelcol-contrib": "0.119.0",
   "rcon": "0.10.3",
   "speedtest": "1.5",
   "dataflow": "0.3.0",
@@ -12,5 +12,5 @@
   "glaredb": "0.9.5",
   "keyring-rs": "3.6.1",
   "fabric-ai": "1.4.131",
-  "whatsapp": "5.0.0"
+  "whatsapp": "5.1.0"
 }
