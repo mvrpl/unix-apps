@@ -4,7 +4,7 @@ class Dataflow < Formula
   version "0.3.0"
   license "GPL-3.0"
 
-  deprecate! date: "2025-02-22", because: "it is no longer maintained"
+  disable! date: "2025-02-22", because: "it is no longer maintained"
 
   url "https://artifacts-mvrpl.s3.sa-east-1.amazonaws.com/dataflow/releases/0.3.0/dataflow-0.3.0.tar.gz"
   sha256 "b691cf2f5dd179131a80bbab840bde268d075b441c2f7ac89949e5e61a0dc7f3"
