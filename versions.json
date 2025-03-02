@@ -10,7 +10,7 @@
   "ssclient": "0.100.0",
   "gofm": "0.2.1",
   "glaredb": "0.9.5",
-  "keyring-rs": "3.6.1",
+  "keyring-rs": "3.6.2",
   "fabric-ai": "1.4.147",
   "whatsapp": "5.2.1"
 }
