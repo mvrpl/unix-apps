@@ -12,5 +12,6 @@
   "glaredb": "0.9.5",
   "keyring-rs": "3.6.1",
   "fabric-ai": "1.4.131",
-  "whatsapp": "5.2.0"
+  "whatsapp": "5.2.0",
+  "wren-ai": "0.15.3"
 }
