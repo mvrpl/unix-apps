@@ -1,5 +1,5 @@
 {
-  "kssh": "1.2.0",
+  "kssh": "1.2.1",
   "chsht": "0.5.0",
   "rusync": "0.7.2",
   "otelcol-contrib": "0.120.0",
@@ -10,8 +10,8 @@
   "ssclient": "0.100.0",
   "gofm": "0.2.1",
   "glaredb": "0.9.5",
-  "keyring-rs": "3.6.1",
-  "fabric-ai": "1.4.131",
-  "whatsapp": "5.2.0",
+  "keyring-rs": "3.6.2",
+  "fabric-ai": "1.4.147",
+  "whatsapp": "5.2.1",
   "wren-ai": "0.15.3"
 }
