@@ -1,8 +1,8 @@
 {
-  "kssh": "1.2.1",
+  "kssh": "1.2.2",
   "chsht": "0.5.0",
   "rusync": "0.7.2",
-  "otelcol-contrib": "0.120.0",
+  "otelcol-contrib": "0.121.0",
   "rcon": "0.10.3",
   "speedtest": "1.5",
   "dataflow": "0.3.0",
@@ -13,5 +13,5 @@
   "keyring-rs": "3.6.2",
   "fabric-ai": "1.4.148",
   "whatsapp": "5.2.1",
-  "wren-ai": "0.15.3"
+  "wren-ai": "0.15.4"
 }
