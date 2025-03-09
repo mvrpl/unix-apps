@@ -1,7 +1,7 @@
 class FabricAi < Formula
   desc "Fabric is an open-source framework for augmenting humans using AI"
   homepage "https://github.com/danielmiessler/fabric"
-  version "1.4.152"
+  version "1.4.155"
   license "MIT"
 
   livecheck do
@@ -12,23 +12,23 @@ class FabricAi < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielmiessler/fabric/releases/download/v1.4.152/fabric-linux-arm64"
-      sha256 "937b8c81b5c644fab6a105057323c9b23a4d586338ce1159c42556389c0db3b0"
+      url "https://github.com/danielmiessler/fabric/releases/download/v1.4.155/fabric-linux-arm64"
+      sha256 "5479b6cd171daeedcb3ff8df91959d5fcadd9d6a76b435737635262502a45ea9"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielmiessler/fabric/releases/download/v1.4.152/fabric-linux-amd64"
-      sha256 "de2c8771c1fdc919836c09d651947761961fa5dfd2266e47b0840fe45f2d431a"
+      url "https://github.com/danielmiessler/fabric/releases/download/v1.4.155/fabric-linux-amd64"
+      sha256 "920f2fc4e5c046736b8fdb16527b7b6e7ab3d668099c1df007fc6d686ccd191d"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielmiessler/fabric/releases/download/v1.4.152/fabric-darwin-arm64"
-      sha256 "3ee236ff8c41a76f7d3e4af43707015aca3838803fa13c506b45d428dc7f61ca"
+      url "https://github.com/danielmiessler/fabric/releases/download/v1.4.155/fabric-darwin-arm64"
+      sha256 "bfe337323a0d7142fdeb6bf6efe7a796331446afc079585aba33d024c5067c85"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielmiessler/fabric/releases/download/v1.4.152/fabric-darwin-amd64"
-      sha256 "937b8c81b5c644fab6a105057323c9b23a4d586338ce1159c42556389c0db3b0"
+      url "https://github.com/danielmiessler/fabric/releases/download/v1.4.155/fabric-darwin-amd64"
+      sha256 "5479b6cd171daeedcb3ff8df91959d5fcadd9d6a76b435737635262502a45ea9"
     end
   end
 
