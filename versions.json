@@ -1,5 +1,5 @@
 {
-  "kssh": "1.2.2",
+  "kssh": "1.2.3",
   "chsht": "0.5.0",
   "rusync": "0.7.2",
   "otelcol-contrib": "0.121.0",
