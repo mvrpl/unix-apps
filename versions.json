@@ -7,6 +7,7 @@
   "speedtest": "1.5",
   "dataflow": "0.3.0",
   "ccp": "0.1.3",
+  "gossm": "1.5.0",
   "ssclient": "0.100.0",
   "gofm": "0.2.1",
   "glaredb": "0.9.5",
