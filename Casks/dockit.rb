@@ -14,6 +14,7 @@ cask 'dockit' do
 
     livecheck do
         url "https://github.com/geek-fun/dockit"
+        regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
         strategy :github_latest
     end
 end
