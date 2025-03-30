@@ -31,7 +31,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 
 ## GUI Applications (MacOS)
 
-- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.dockit&style=flat&label=dockit&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/dockit.rb) `brew install --cask dockit`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.dockit&style=flat&label=dockit&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Casks/dockit.rb) `brew install --cask dockit`
 
 ## Contributing
 
