@@ -6,7 +6,6 @@ cask 'dockit' do
     name 'DocKit'
     homepage 'https://dockit.geekfun.club'
     desc "Elasticsearch GUI client"
-    license "Apache-2.0"
 
     auto_updates false
     depends_on macos: '>= :monterey'
