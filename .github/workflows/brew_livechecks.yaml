@@ -37,11 +37,11 @@ jobs:
         run: |
           sudo apt-get install -y coreutils pcregrep
           brew install jq
-          update_version () { if [ ! -f ./Formula/${1}.rb ];then return false;fi;formula=$1;new_version=$2;old_version=$3;awk -v old="$old_version" -v new="$new_version" '{if ($0 ~ /(url|version|bin\.install)/) {gsub(old, new, $0)};print $0 >"awk.out"}' ./Formula/${formula}.rb;mv awk.out ./Formula/${formula}.rb; }
+          update_version () { if [ ! -f ./Formula/${1}.rb ];then return 0;fi;formula=$1;new_version=$2;old_version=$3;awk -v old="$old_version" -v new="$new_version" '{if ($0 ~ /(url|version|bin\.install)/) {gsub(old, new, $0)};print $0 >"awk.out"}' ./Formula/${formula}.rb;mv awk.out ./Formula/${formula}.rb; }
           export -f update_version
-          update_hashs () { if [ ! -f ./Formula/${1}.rb ];then return false;fi;formula=$1;paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./Formula/${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./Formula/${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL $1 | sha256sum | cut -d " " -f 1);sed -ri "s/$2/$hash/g" ./Formula/'${formula}'.rb' bash; }
+          update_hashs () { if [ ! -f ./Formula/${1}.rb ];then return 0;fi;formula=$1;paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./Formula/${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./Formula/${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL $1 | sha256sum | cut -d " " -f 1);sed -ri "s/$2/$hash/g" ./Formula/'${formula}'.rb' bash; }
           export -f update_hashs
-          update_versions() { if [ ! -f ./Formula/${1}.rb ];then return false;fi;tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
+          update_versions() { if [ ! -f ./Formula/${1}.rb ];then return 0;fi;tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
           export -f update_versions
           echo "update version"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current)"' | xargs -n1 bash -c '$1' bash
@@ -55,11 +55,11 @@ jobs:
         run: |
           sudo apt-get install -y coreutils pcregrep
           brew install jq
-          update_version () { if [ ! -f ./Casks/${1}.rb ];then return false;fi;formula=$1;new_version=$2;old_version=$3;awk -v old="$old_version" -v new="$new_version" '{if ($0 ~ /(url|version|bin\.install)/) {gsub(old, new, $0)};print $0 >"awk.out"}' ./Formula/${formula}.rb;mv awk.out ./Formula/${formula}.rb; }
+          update_version () { if [ ! -f ./Casks/${1}.rb ];then return 0;fi;formula=$1;new_version=$2;old_version=$3;awk -v old="$old_version" -v new="$new_version" '{if ($0 ~ /(url|version|bin\.install)/) {gsub(old, new, $0)};print $0 >"awk.out"}' ./Formula/${formula}.rb;mv awk.out ./Formula/${formula}.rb; }
           export -f update_version
-          update_hashs () { if [ ! -f ./Casks/${1}.rb ];then return false;fi;formula=$1;paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./Formula/${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./Formula/${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL $1 | sha256sum | cut -d " " -f 1);sed -ri "s/$2/$hash/g" ./Formula/'${formula}'.rb' bash; }
+          update_hashs () { if [ ! -f ./Casks/${1}.rb ];then return 0;fi;formula=$1;paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./Formula/${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./Formula/${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL $1 | sha256sum | cut -d " " -f 1);sed -ri "s/$2/$hash/g" ./Formula/'${formula}'.rb' bash; }
           export -f update_hashs
-          update_versions() { if [ ! -f ./Casks/${1}.rb ];then return false;fi;tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
+          update_versions() { if [ ! -f ./Casks/${1}.rb ];then return 0;fi;tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
           export -f update_versions
           echo "update version"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current)"' | xargs -n1 bash -c '$1' bash
