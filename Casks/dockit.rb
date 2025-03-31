@@ -5,7 +5,7 @@ cask 'dockit' do
     url "https://github.com/geek-fun/dockit/releases/download/v0.6.3/DocKit_0.6.3_universal.dmg"
     name 'DocKit'
     homepage 'https://dockit.geekfun.club'
-    desc "Elasticsearch GUI client"
+    desc "NoSQL/NewSQL GUI client"
 
     auto_updates false
     depends_on macos: '>= :monterey'
