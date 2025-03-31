@@ -44,11 +44,11 @@ jobs:
           update_versions() { tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
           export -f update_versions
           echo "update version"
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current)"' | xargs -n1 bash -c '[ -f Formula/${1}.rb ] && $1' bash
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current)"' | xargs -n1 bash -c 'if [[ -f ./Formula/${1}.rb ]];then $1;fi' bash
           echo "update hashs"
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_hashs \(.formula)"' | xargs -n1 bash -c '[ -f Formula/${1}.rb ] && $1' bash
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_hashs \(.formula)"' | xargs -n1 bash -c 'if [[ -f ./Formula/${1}.rb ]];then $1;fi' bash
           echo "update versions json"
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_versions \(.formula) \(.version.latest)"' | xargs -n1 bash -c '[ -f Formula/${1}.rb ] && $1' bash
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_versions \(.formula) \(.version.latest)"' | xargs -n1 bash -c 'if [[ -f ./Formula/${1}.rb ]];then $1;fi' bash
       - name: Updates Casks
         env:
           APPS: ${{needs.brew-livecheck.outputs.json-apps}}
@@ -62,11 +62,11 @@ jobs:
           update_versions() { tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
           export -f update_versions
           echo "update version"
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current)"' | xargs -n1 bash -c '[ -f Casks/${1}.rb ] && $1' bash
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current)"' | xargs -n1 bash -c 'if [[ -f ./Casks/${1}.rb ]];then $1;fi' bash
           echo "update hashs"
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_hashs \(.formula)"' | xargs -n1 bash -c '[ -f Casks/${1}.rb ] && $1' bash
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_hashs \(.formula)"' | xargs -n1 bash -c 'if [[ -f ./Casks/${1}.rb ]];then $1;fi' bash
           echo "update versions json"
-          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_versions \(.formula) \(.version.latest)"' | xargs -n1 bash -c '[ -f Casks/${1}.rb ] && $1' bash
+          echo "$APPS" | jq '.[] | select(.version.outdated) | "update_versions \(.formula) \(.version.latest)"' | xargs -n1 bash -c 'if [[ -f ./Casks/${1}.rb ]];then $1;fi' bash
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
