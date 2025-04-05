@@ -14,5 +14,6 @@
   "keyring-rs": "3.6.2",
   "whatsapp": "5.4.0",
   "wren-ai": "0.19.1",
-  "dockit": "0.6.4"
+  "dockit": "0.6.4",
+  "screego": "1.11.2"
 }
