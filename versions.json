@@ -1,6 +1,6 @@
 {
   "kssh": "1.2.4",
-  "chsht": "0.5.0",
+  "chsht": "1.0.0",
   "rusync": "0.7.2",
   "otelcol-contrib": "0.123.1",
   "rcon": "0.10.3",
@@ -16,5 +16,5 @@
   "wren-ai": "0.19.1",
   "dockit": "0.6.5",
   "screego": "1.11.2",
-  "desktop-chsht": "0.0.2"
+  "desktop-chsht": "0.1.0"
 }
