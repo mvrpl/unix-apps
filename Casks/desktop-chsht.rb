@@ -1,8 +1,8 @@
 cask 'desktop-chsht' do
-  version "0.2.0"
-  sha256 "c3fb5f490c0f437130d5284878cbb07a30797a24c85ec172fa9f9ecab0f66c31"
+  version "0.2.1"
+  sha256 "267fc000141eb0f73433a17d8fca5710a02d32eed54198644d71703c809e57f7"
 
-  url "https://github.com/mvrpl/Desktop-Cheat-Sheet/releases/download/v0.2.0/Desktop-Cheat-Sheet.app.zip"
+  url "https://github.com/mvrpl/Desktop-Cheat-Sheet/releases/download/v0.2.1/Desktop-Cheat-Sheet.app.zip"
   name "Desktop Cheat Sheet"
   homepage "https://github.com/mvrpl/Desktop-Cheat-Sheet"
   desc "Cheat Sheets GUI client"
