@@ -1,7 +1,7 @@
 class Screego < Formula
   desc "Screen sharing for developers"
   homepage "https://screego.net"
-  version "1.11.2"
+  version "1.11.3"
   license "GPL-3.0"
 
   livecheck do
@@ -12,25 +12,25 @@ class Screego < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/screego/server/releases/download/v1.11.2/screego_1.11.2_linux_arm64.tar.gz"
-      sha256 "423099a3839284c66613f799ae5591823400bf44d9402a89d3267a7ebcc0d02e"
+      url "https://github.com/screego/server/releases/download/v1.11.3/screego_1.11.3_linux_arm64.tar.gz"
+      sha256 "f45a3202454dc5095166dd118b3599570229a2e8fe61ba098bc02cc00da0da28"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/screego/server/releases/download/v1.11.2/screego_1.11.2_linux_amd64.tar.gz"
-      sha256 "2733a1e59442f7aa272e0e55f4d2366a8e201d0af4021a9bd7e9f6176e4644b5"
+      url "https://github.com/screego/server/releases/download/v1.11.3/screego_1.11.3_linux_amd64.tar.gz"
+      sha256 "10750ba84150ba50962b3e74bf45829a25903d8e440058d7e1ea5fb2f8a3d5a2"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/screego/server/releases/download/v1.11.2/screego_1.11.2_darwin_arm64.tar.gz"
-      sha256 "7983f3d2a138853d2b9c220c9caa220d4e48deb2daad21663f5054a1366c3a8b"
+      url "https://github.com/screego/server/releases/download/v1.11.3/screego_1.11.3_darwin_arm64.tar.gz"
+      sha256 "04e86a416ca722e775f1aaa0ba9fd32cd5f30bc66bb675f9c23f5324a7c3cd5a"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/screego/server/releases/download/v1.11.2/screego_1.11.2_darwin_amd64.tar.gz"
-      sha256 "8fab54e2aab814b1fdf792cc951bac41e89391427c7f69981c73236693cc7c6b"
+      url "https://github.com/screego/server/releases/download/v1.11.3/screego_1.11.3_darwin_amd64.tar.gz"
+      sha256 "8a8f293397e0a59fcd23b6d34e94d9d83e767265eb06d916f0c79f1c962c5554"
     end
   end
 
