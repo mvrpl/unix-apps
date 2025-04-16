@@ -1,7 +1,7 @@
 class Glaredb < Formula
   desc "An analytics DBMS for distributed data"
   homepage "https://github.com/GlareDB/glaredb"
-  version "0.9.5"
+  version "0.10.3"
   license "AGPL-3.0"
 
   livecheck do
@@ -11,18 +11,18 @@ class Glaredb < Formula
   end
 
   if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/GlareDB/glaredb/releases/download/v0.9.5/glaredb-x86_64-unknown-linux-gnu.zip"
-    sha256 "c30eae952414a61093175e5573668bcf93b249fcd9a9e648ce7e4b8e0073ad4b"
+    url "https://github.com/GlareDB/glaredb/releases/download/v0.10.3/glaredb-x86_64-unknown-linux-gnu.zip"
+    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/GlareDB/glaredb/releases/download/v0.9.5/glaredb-aarch64-apple-darwin.zip"
-      sha256 "993bbe727d786d1da6893fc1a8285bb462778529b36bc41761cc1be7454ab280"
+      url "https://github.com/GlareDB/glaredb/releases/download/v0.10.3/glaredb-aarch64-apple-darwin.zip"
+      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/GlareDB/glaredb/releases/download/v0.9.5/glaredb-x86_64-apple-darwin.zip"
-      sha256 "9ade9330f32c17d32b145982e4d1d0c8b8007e12eac8be0993f7a4717b624181"
+      url "https://github.com/GlareDB/glaredb/releases/download/v0.10.3/glaredb-x86_64-apple-darwin.zip"
+      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
     end
   end
 
