@@ -2,7 +2,7 @@
   "kssh": "1.2.6",
   "chsht": "1.0.0",
   "rusync": "0.7.2",
-  "otelcol-contrib": "0.124.0",
+  "otelcol-contrib": "0.124.1",
   "rcon": "0.10.3",
   "speedtest": "1.5",
   "dataflow": "0.3.0",
