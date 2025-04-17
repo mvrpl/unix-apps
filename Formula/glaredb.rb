@@ -34,10 +34,9 @@ class Glaredb < Formula
       if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
         bin.install "glaredb-linux-arm64" => "glaredb"
       end
-      if OS.mac? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        bin.install "glaredb-macos-arm64" => "glaredb"
-      end
     end
-    
+    if OS.mac? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      bin.install "glaredb-macos-arm64" => "glaredb"
+    end
   end
 end
