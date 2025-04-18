@@ -42,7 +42,7 @@ jobs:
           export -f update_version
           update_hashs () { if [ ! -f ./Formula/${1}.rb ];then return 0;fi;formula=$1;paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./Formula/${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./Formula/${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL --fail $1 | sha256sum | cut -d " " -f 1;test ${PIPESTATUS[0]} -eq 0 || { echo "'${formula}'" >> /tmp/.hashfailf; });sed -ri "s/$2/$hash/g" ./Formula/'${formula}'.rb' bash; }
           export -f update_hashs
-          update_versions() { if [ ! -f ./Formula/${1}.rb ] && grep -qP '^'$1'$' "/tmp/.hashfailf";then return 0;fi;tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
+          update_versions() { if [ ! -f ./Formula/${1}.rb ];then return 0;fi;if [ -f /tmp/.hashfailf ] && grep -qP '^'$1'$' "/tmp/.hashfailf";then return 0;fi;tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
           export -f update_versions
           echo "update version"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.formula) \(.version.latest) \(.version.current)"' | xargs -n1 bash -c '$1' bash
@@ -66,7 +66,7 @@ jobs:
           export -f update_version
           update_hashs () { if [ ! -f ./Casks/${1}.rb ];then return 0;fi;formula=$1;paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./Casks/${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./Casks/${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL --fail $1 | sha256sum | cut -d " " -f 1;test ${PIPESTATUS[0]} -eq 0 || { echo "'${formula}'" >> /tmp/.hashfailc; });sed -ri "s/$2/$hash/g" ./Casks/'${formula}'.rb' bash; }
           export -f update_hashs
-          update_versions() { if [ ! -f ./Casks/${1}.rb ] && grep -qP '^'$1'$' "/tmp/.hashfailc";then return 0;fi;tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
+          update_versions() { if [ ! -f ./Casks/${1}.rb ];then return 0;fi;if [ -f /tmp/.hashfailc ] && grep -qP '^'$1'$' "/tmp/.hashfailc";then return 0;fi;tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
           export -f update_versions
           echo "update version"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_version \(.cask) \(.version.latest) \(.version.current)"' | xargs -n1 bash -c '$1' bash
