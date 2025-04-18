@@ -49,6 +49,7 @@ jobs:
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_hashs \(.formula)"' | xargs -n1 bash -c '$1' bash
           echo "update versions json"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_versions \(.formula) \(.version.latest)"' | xargs -n1 bash -c '$1' bash
+          echo "Check failures"
           while read -r formula; do
             git checkout -- Formula/${formula}.rb
           done < "/tmp/.hashfailf"
@@ -70,6 +71,7 @@ jobs:
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_hashs \(.cask)"' | xargs -n1 bash -c '$1' bash
           echo "update versions json"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_versions \(.cask) \(.version.latest)"' | xargs -n1 bash -c '$1' bash
+          echo "Check failures"
           while read -r cask; do
             git checkout -- Casks/${cask}.rb
           done < "/tmp/.hashfailc"
