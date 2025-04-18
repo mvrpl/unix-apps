@@ -50,10 +50,10 @@ jobs:
           echo "update versions json"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_versions \(.formula) \(.version.latest)"' | xargs -n1 bash -c '$1' bash
           echo "Check failures"
-          while read -r formula; do
+          [ -f /tmp/.hashfailf ] && cat /tmp/.hashfailf | while read formula;do
             echo $formula
             git checkout -- Formula/${formula}.rb
-          done < "/tmp/.hashfailf"
+          done
       - name: Updates Casks
         env:
           APPS: ${{needs.brew-livecheck.outputs.json-apps}}
@@ -73,10 +73,10 @@ jobs:
           echo "update versions json"
           echo "$APPS" | jq '.[] | select(.version.outdated) | "update_versions \(.cask) \(.version.latest)"' | xargs -n1 bash -c '$1' bash
           echo "Check failures"
-          while read -r cask; do
+          [ -f /tmp/.hashfailc ] && cat /tmp/.hashfailc | while read cask;do
             echo $cask
             git checkout -- Casks/${cask}.rb
-          done < "/tmp/.hashfailc"
+          done
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
