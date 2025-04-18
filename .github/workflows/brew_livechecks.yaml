@@ -52,7 +52,7 @@ jobs:
           echo "Check failures"
           [ -f /tmp/.hashfailf ] && cat /tmp/.hashfailf | while read formula;do
             echo $formula
-            git checkout -- Formula/${formula}.rb
+            git checkout -- ./Formula/${formula}.rb
           done
       - name: Updates Casks
         env:
@@ -75,7 +75,7 @@ jobs:
           echo "Check failures"
           [ -f /tmp/.hashfailc ] && cat /tmp/.hashfailc | while read cask;do
             echo $cask
-            git checkout -- Casks/${cask}.rb
+            git checkout -- ./Casks/${cask}.rb
           done
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
