@@ -29,6 +29,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.wren-ai&style=flat&label=wren-ai&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/wren-ai.rb) `brew install wren-ai`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.gossm&style=flat&label=gossm&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/gossm.rb) `brew install gossm`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.screego&style=flat&label=screego&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/screego.rb) `brew install screego`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.minijinja-cli&style=flat&label=minijinja-cli&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/minijinja-cli.rb) `brew install minijinja-cli`
 
 ## GUI Applications (MacOS)
 
