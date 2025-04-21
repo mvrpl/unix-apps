@@ -11,7 +11,7 @@ cask 'desktop-chsht' do
   depends_on macos: ">= :monterey"
   depends_on formula: "chsht"
 
-  app "Desktop-Cheat-Sheet.app"
+  app "Desktop-Cheat-Sheet.app" => "Desktop Cheat Sheet.app"
 
   livecheck do
       url :homepage
