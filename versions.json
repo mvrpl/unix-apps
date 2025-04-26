@@ -16,5 +16,6 @@
   "wren-ai": "0.21.0",
   "dockit": "0.6.6",
   "screego": "1.11.3",
-  "desktop-chsht": "0.2.3"
+  "desktop-chsht": "0.2.3",
+  "aptos-cli": "7.3.0"
 }
