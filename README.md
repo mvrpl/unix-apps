@@ -30,6 +30,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.gossm&style=flat&label=gossm&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/gossm.rb) `brew install gossm`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.screego&style=flat&label=screego&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/screego.rb) `brew install screego`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.aptos-cli&style=flat&label=aptos-cli&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/aptos-cli.rb) `brew install aptos-cli`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.ferron&style=flat&label=ferron&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/ferron.rb) `brew install mvrpl/unix-apps/ferron`
 
 ## GUI Applications (MacOS)
 
