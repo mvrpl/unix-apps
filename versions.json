@@ -10,7 +10,7 @@
   "gossm": "1.5.0",
   "ssclient": "0.100.0",
   "gofm": "0.2.1",
-  "glaredb": "0.10.17",
+  "glaredb": "25.5.0",
   "keyring-rs": "3.6.2",
   "whatsapp": "5.6.0",
   "wren-ai": "0.21.0",
