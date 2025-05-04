@@ -1,8 +1,8 @@
 cask 'dockit' do
-    version "0.6.7"
-    sha256 "d459336c6464c2075c712377489e7e18a8d91959b02f0c23f21c3a7119b16b30"
+    version "0.6.8"
+    sha256 "a220f814d30975b51bc263812ba569362e6aa26b167334dfbfdf2a7c0a108318"
 
-    url "https://github.com/geek-fun/dockit/releases/download/v0.6.7/DocKit_0.6.7_universal.dmg"
+    url "https://github.com/geek-fun/dockit/releases/download/v0.6.8/DocKit_0.6.8_universal.dmg"
     name "DocKit"
     homepage "https://dockit.geekfun.club"
     desc "NoSQL/NewSQL GUI client"
