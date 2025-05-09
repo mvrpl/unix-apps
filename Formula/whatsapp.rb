@@ -1,7 +1,7 @@
 class Whatsapp < Formula
     desc "API for Whatsapp Web Multi Device Version, Support UI & Webhook"
     homepage "https://github.com/aldinokemal/go-whatsapp-web-multidevice"
-    version "5.6.0"
+    version "5.6.1"
     license "MIT"
 
     livecheck do
@@ -12,18 +12,18 @@ class Whatsapp < Formula
 
     if OS.linux?
         if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-            url "https://github.com/aldinokemal/go-whatsapp-web-multidevice/releases/download/v5.6.0/linux-arm64"
-            sha256 "e81403c44d4dd252e7aebd5ad88b7d9a47f71dca042c32af07cd7a2be68a17d7"
+            url "https://github.com/aldinokemal/go-whatsapp-web-multidevice/releases/download/v5.6.1/linux-arm64"
+            sha256 "15c5d3c409c59ba1ec59846e8618ee829fd219aca7e096af194e972e361c6c6f"
         end
         if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-            url "https://github.com/aldinokemal/go-whatsapp-web-multidevice/releases/download/v5.6.0/linux-amd64"
-            sha256 "772c27b4fef17d96e29f62f4f19e2c12421b2968858097363aaa645faa1dca66"
+            url "https://github.com/aldinokemal/go-whatsapp-web-multidevice/releases/download/v5.6.1/linux-amd64"
+            sha256 "7a6d27860df31efa73b2214376d06c51e85c5e78ddabac07adc1718c5a794cb0"
         end
     end
 
     if OS.mac? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-        url "https://github.com/aldinokemal/go-whatsapp-web-multidevice/releases/download/v5.6.0/darwin-amd64"
-        sha256 "eaf7531f439318f8b75a9679ed23fda2c5b93ea6ebf7db0a15e2213e54b0a630"
+        url "https://github.com/aldinokemal/go-whatsapp-web-multidevice/releases/download/v5.6.1/darwin-amd64"
+        sha256 "2325ef4d5158e391eee59458625227a4f09103842714136b4588efcbde95d6b2"
     end
 
     def install
