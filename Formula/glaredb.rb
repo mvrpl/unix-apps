@@ -1,7 +1,7 @@
 class Glaredb < Formula
   desc "An analytics DBMS for distributed data"
   homepage "https://github.com/GlareDB/glaredb"
-  version "25.5.8"
+  version "25.5.9"
   license "AGPL-3.0"
 
   livecheck do
@@ -12,18 +12,18 @@ class Glaredb < Formula
 
   if OS.linux?
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/GlareDB/glaredb/releases/download/v25.5.8/glaredb-linux-x86_64"
-      sha256 "e4e1f43c2be2f042bd03b1c98843e917e6583c0a09dd13a22dfb0676689f7223"
+      url "https://github.com/GlareDB/glaredb/releases/download/v25.5.9/glaredb-linux-x86_64"
+      sha256 "6fff2677c0f115f88435d75d04ad1df32d2a310db04ea945b836583c88317263"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/GlareDB/glaredb/releases/download/v25.5.8/glaredb-linux-arm64"
-      sha256 "12faf5293a5cd507d78e3d812bff72e12db84bc05245a0a0a3cfeed03a6da500"
+      url "https://github.com/GlareDB/glaredb/releases/download/v25.5.9/glaredb-linux-arm64"
+      sha256 "46df9ec6382c546f340ded629d03ce30fb1d62deaeca51c7555b0361fa08da65"
     end
   end
 
   if OS.mac? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/GlareDB/glaredb/releases/download/v25.5.8/glaredb-macos-arm64"
-    sha256 "558145fb3233d88f4db8fad070a8111affeca00535ca5a08827d2caf55e6eb7d"
+    url "https://github.com/GlareDB/glaredb/releases/download/v25.5.9/glaredb-macos-arm64"
+    sha256 "70c3624be5b0b18d16bd8f1b568f10403557fb7d5f7825c27aedd7d373fc6767"
   end
 
   def install
