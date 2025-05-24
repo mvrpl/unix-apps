@@ -18,5 +18,6 @@
   "screego": "1.11.3",
   "desktop-chsht": "0.2.3",
   "ferron": "1.0.0",
-  "aptos-cli": "7.3.0"
+  "aptos-cli": "7.3.0",
+  "aws-finops": "1.0.0"
 }
