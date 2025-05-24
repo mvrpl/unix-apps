@@ -24,12 +24,12 @@ class AwsFinops < Formula
 
   def install
     if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      bin.install " aws-finops-linux-amd64" => "aws-finops"
+      bin.install "aws-finops-linux-amd64" => "aws-finops"
     end
 
     if OS.mac?
       if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-        bin.install " aws-finops-darwin-amd64" => "aws-finops"
+        bin.install "aws-finops-darwin-amd64" => "aws-finops"
       end
     end
   end
