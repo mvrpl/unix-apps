@@ -22,8 +22,6 @@ class AwsFinops < Formula
     end
   end
 
-  depends_on "less"
-
   def install
     if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       bin.install " aws-finops-linux-amd64" => "aws-finops"
