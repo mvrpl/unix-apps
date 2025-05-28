@@ -12,7 +12,7 @@ Applications not found in main or extras
 brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 ```
 
-## Terminal Applications
+## TUI Applications (MacOS & Linux)
 
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.chsht&style=flat&label=chsht&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/chsht.rb) `brew install chsht`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.rusync&style=flat&label=rusync&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/rusync.rb) `brew install rusync`
