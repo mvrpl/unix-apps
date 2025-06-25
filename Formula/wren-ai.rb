@@ -1,7 +1,7 @@
 class WrenAi < Formula
   desc "Open-source GenBI AI Agent that empowers data-driven teams to chat with their data to generate Text-to-SQL, charts, spreadsheets, reports, and BI"
   homepage "https://github.com/Canner/WrenAI"
-  version "0.24.0"
+  version "0.24.1"
   license "AGPL-3.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class WrenAi < Formula
   end
 
   if OS.linux? && Hardware::CPU.is_64_bit?
-    url "https://github.com/Canner/WrenAI/releases/download/0.24.0/wren-launcher-linux.tar.gz"
-    sha256 "ffb9cbb9d8fd2ede9e008ce5a39a831026494a8a52251b9113c7a1221a1dc9f3"
+    url "https://github.com/Canner/WrenAI/releases/download/0.24.1/wren-launcher-linux.tar.gz"
+    sha256 "818234f124c56cbac1901cd74c5caf4934c6650e782cf752769fa9a384cf4c10"
   end
 
   if OS.mac? && Hardware::CPU.is_64_bit?
-    url "https://github.com/Canner/WrenAI/releases/download/0.24.0/wren-launcher-darwin.tar.gz"
-    sha256 "554581d4beb027bac736368b7ce3a35c3f1aafcd166f319fbb57858e83ef1d30"
+    url "https://github.com/Canner/WrenAI/releases/download/0.24.1/wren-launcher-darwin.tar.gz"
+    sha256 "25532ebcb73b201b7dbafcf6a37db2c2d5d95c7ce6acb30f5ee105fa650d9538"
   end
 
   def install
