@@ -5,9 +5,9 @@ class AptosCli < Formula
   license "Apache-2.0"
 
   livecheck do
-    url 'https://github.com/aptos-labs/aptos-core'
+    url 'https://api.github.com/repos/aptos-labs/aptos-core/releases'
     regex(/^aptos-cli-v([\d\.]+)$/i)
-    strategy :github_latest do |json, regex|
+    strategy :json do |json, regex|
       match = json["tag_name"]&.match(regex)
       next if match.blank?
   
