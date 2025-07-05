@@ -8,10 +8,12 @@ class AptosCli < Formula
     url 'https://api.github.com/repos/aptos-labs/aptos-core/releases'
     regex(/^aptos-cli-v([\d\.]+)$/i)
     strategy :json do |json, regex|
-      match = json["tag_name"]&.match(regex)
-      next if match.blank?
-  
-      match[1]
+      json.map do |release|
+        match = release["tag_name"]&.match(regex)
+        next if match.blank?
+
+        match[1]
+      end
     end
   end
 
