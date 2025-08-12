@@ -84,12 +84,18 @@ jobs:
             git checkout -- ./Casks/${cask}.rb
           done
       - name: Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
+          commit_user_name: mvrpl
+          commit_user_email: mvrpl.me@gmail.com
+          commit_author: Marcos Lima <mvrpl.me@gmail.com>
           file_pattern: '*.rb'
           branch: main
       - name: Push changes versions
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
+          commit_user_name: mvrpl
+          commit_user_email: mvrpl.me@gmail.com
+          commit_author: Marcos Lima <mvrpl.me@gmail.com>
           file_pattern: 'versions.json'
           branch: main
