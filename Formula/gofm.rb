@@ -1,7 +1,7 @@
 class Gofm < Formula
   desc "GoFM is a cross-platform real-time audio streaming server for MP3 files"
   homepage "https://github.com/ssnat/GoFM"
-  version "0.2.2"
+  version "0.2.4"
   license "MIT"
 
   livecheck do
@@ -12,23 +12,23 @@ class Gofm < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ssnat/GoFM/releases/download/v0.2.2/GoFM-linux-arm64-v0.2.2"
-      sha256 "22d5da8ff902ca1a9fe47bdf5a5d976bb27fef7e5040d1f84dce02200ef32aed"
+      url "https://github.com/ssnat/GoFM/releases/download/v0.2.4/GoFM-linux-arm64-v0.2.4"
+      sha256 "92a448c282b9c9b471373a522beca8cf79e451e8af05ae13cc0429d9f42ca3e5"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ssnat/GoFM/releases/download/v0.2.2/GoFM-linux-amd64-v0.2.2"
-      sha256 "db158d70dd88e439fbc2eca6e66f401bc148cbb52c3ac4f66ccab778350d4e9c"
+      url "https://github.com/ssnat/GoFM/releases/download/v0.2.4/GoFM-linux-amd64-v0.2.4"
+      sha256 "25f42d3250133c7deb07e8bf5ab943d352bc5c765f37793333b86ff2030176c4"
     end
   end
 
   def install
     if OS.linux?
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        bin.install "GoFM-linux-arm64-v0.2.2"  => "gofm"
+        bin.install "GoFM-linux-arm64-v0.2.4"  => "gofm"
       end
       if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-        bin.install "GoFM-linux-amd64-v0.2.2"  => "gofm"
+        bin.install "GoFM-linux-amd64-v0.2.4"  => "gofm"
       end
     end
   end
