@@ -33,6 +33,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.ferron&style=flat&label=ferron&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/ferron.rb) `brew install mvrpl/unix-apps/ferron`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.aws-finops&style=flat&label=aws-finops&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/aws-finops.rb) `brew install aws-finops`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.dotenvx&style=flat&label=dotenvx&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/dotenvx.rb) `brew install dotenvx`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.clio-server&style=flat&label=clio-server&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/clio-server.rb) `brew install clio-server`
 
 ## GUI Applications (MacOS)
 

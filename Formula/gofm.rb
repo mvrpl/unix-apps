@@ -25,10 +25,10 @@ class Gofm < Formula
   def install
     if OS.linux?
       if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        bin.install "GoFM-linux-arm64-v0.2.4"  => "gofm"
+        bin.install "GoFM-linux-arm64-v0.2.4" => "gofm"
       end
       if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-        bin.install "GoFM-linux-amd64-v0.2.4"  => "gofm"
+        bin.install "GoFM-linux-amd64-v0.2.4" => "gofm"
       end
     end
   end
