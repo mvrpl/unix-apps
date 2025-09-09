@@ -1,7 +1,7 @@
 class OtelcolContrib < Formula
   desc "OpenTelemetry Collector Contrib"
   homepage "https://github.com/open-telemetry/opentelemetry-collector-releases"
-  version "0.134.1"
+  version "0.135.0"
   license "Apache-2.0"
 
   livecheck do
@@ -11,18 +11,18 @@ class OtelcolContrib < Formula
   end
 
   if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.134.1/otelcol-contrib_0.134.1_linux_amd64.tar.gz"
-    sha256 "c54842030d755ea5f3fd4ad7ab6b3b4be9a0a7d8856ce9b6e15dd12e8c2d38cf"
+    url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.135.0/otelcol-contrib_0.135.0_linux_amd64.tar.gz"
+    sha256 "43132748eb0effb56b9d508ca789149684bf7ab6ade5d65cd0b22c4d265a30c0"
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.134.1/otelcol-contrib_0.134.1_darwin_arm64.tar.gz"
-      sha256 "295240c82709dba37dc874adce44496193dea15f8d9ee401e8aa281feed6b664"
+      url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.135.0/otelcol-contrib_0.135.0_darwin_arm64.tar.gz"
+      sha256 "a6c6b21b85d469b7fcbade017b3e8d39cd88580f3ed5c972542a223771b2f485"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.134.1/otelcol-contrib_0.134.1_darwin_amd64.tar.gz"
-      sha256 "a7eaef5d0139f6b929a01f31abdda0f6d107cafe4bf5b4d86b26af93762fe70e"
+      url "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.135.0/otelcol-contrib_0.135.0_darwin_amd64.tar.gz"
+      sha256 "d5db819e4c2065ca94cb49e34a468ae622114555e1859aa1a077ad155fddf1ff"
     end
   end
 
