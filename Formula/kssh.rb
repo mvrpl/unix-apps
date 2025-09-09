@@ -1,7 +1,7 @@
 class Kssh < Formula
   desc "SSH Log-in with AWS KMS Key"
   homepage "https://github.com/mvrpl/kssh"
-  version "1.3.2"
+  version "1.3.3"
   license "MPL-2.0"
 
   livecheck do
@@ -11,19 +11,19 @@ class Kssh < Formula
   end
 
   if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/mvrpl/kssh/releases/download/v1.3.2/kssh-linux-x64"
-    sha256 "f1908045a87a4f77e4058a3ed6ff786058a36098c81461120e90ac87b0621967"
+    url "https://github.com/mvrpl/kssh/releases/download/v1.3.3/kssh-linux-x64"
+    sha256 "ada36258230f744c36b38e6b42953c3d9177ef4a594a28014d11a0136e49896d"
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/kssh/releases/download/v1.3.2/kssh-macos-arm64"
-      sha256 "8feaf5918915ee80bc27d27f428212b7c171947f3f6d66f03b9ff80158890227"
+      url "https://github.com/mvrpl/kssh/releases/download/v1.3.3/kssh-macos-arm64"
+      sha256 "62827b645b0d4d8d62f983c7ac0638fc9d3c1680641956abd9c7f3d6549e974b"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mvrpl/kssh/releases/download/v1.3.2/kssh-macos-x64"
-      sha256 "8feaf5918915ee80bc27d27f428212b7c171947f3f6d66f03b9ff80158890227"
+      url "https://github.com/mvrpl/kssh/releases/download/v1.3.3/kssh-macos-x64"
+      sha256 "62827b645b0d4d8d62f983c7ac0638fc9d3c1680641956abd9c7f3d6549e974b"
     end
   end
 
