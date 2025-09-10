@@ -18,6 +18,7 @@ class Iota < Formula
   end
 
   depends_on "postgresql"
+  depends_on "libpq"
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
