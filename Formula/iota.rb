@@ -17,6 +17,8 @@ class Iota < Formula
     end
   end
 
+  depends_on "postgresql"
+
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/iotaledger/iota/releases/download/v1.6.1/iota-v1.6.1-linux-arm64.tgz"
@@ -36,6 +38,15 @@ class Iota < Formula
   end
 
   def install
-    bin.install "aptos"
+    libexec.install Dir["*"]
+  end
+
+  def caveats
+    <<~EOS
+      To make the binaries from this formula available in your shell,
+      add the following line to your shell profile (e.g., ~/.zshrc or ~/.bash_profile):
+  
+      export PATH="#{opt_prefix}/libexec/bin:$PATH"
+    EOS
   end
 end
