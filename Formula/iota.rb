@@ -38,15 +38,6 @@ class Iota < Formula
   end
 
   def install
-    libexec.install Dir["*"]
-  end
-
-  def caveats
-    <<~EOS
-      To make the binaries from this formula available in your shell,
-      add the following line to your shell profile (e.g., ~/.zshrc or ~/.bash_profile):
-  
-      export PATH="#{opt_prefix}/libexec/bin:$PATH"
-    EOS
+    bin.install Dir["*"]
   end
 end
