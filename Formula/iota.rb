@@ -17,6 +17,7 @@ class Iota < Formula
     end
   end
 
+  depends_on "postgresql"
   depends_on "libpq"
 
   if OS.linux?
