@@ -37,7 +37,7 @@ class Tolk < Formula
   end
 
   def install
-    system "npm", "i", "@ton/tolk-js"
+    system "npm", "i", "--prefix", prefix, "@ton/tolk-js"
 
     stdlib_path = prefix/"node_modules/@ton/tolk-js/dist/tolk-stdlib"
 
