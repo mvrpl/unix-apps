@@ -39,7 +39,9 @@ class Tolk < Formula
   def install
     system "npm", "i", "@ton/tolk-js"
 
-    ENV["TOLK_STDLIB"] = prefix/"node_modules/@ton/tolk-js/dist/tolk-stdlib"
+    stdlib_path = prefix/"node_modules/@ton/tolk-js/dist/tolk-stdlib"
+
+    ohai "Set TOLK_STDLIB env var to #{stdlib_path} if needed"
 
     if OS.linux?
         if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
