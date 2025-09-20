@@ -10,6 +10,8 @@ class Tolk < Formula
     strategy :github_latest
   end
 
+  depends_on "node"
+
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/ton-blockchain/ton/releases/download/tolk-1.1.0/tolk-linux-arm64"
@@ -35,6 +37,10 @@ class Tolk < Formula
   end
 
   def install
+    system "npm", "i", "@ton/tolk-js"
+
+    ENV["TOLK_STDLIB"] = prefix/"node_modules/@ton/tolk-js/dist/tolk-stdlib"
+
     if OS.linux?
         if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
             bin.install "tolk-linux-arm64" => "tolk"
