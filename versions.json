@@ -22,7 +22,7 @@
   "aptos-cli": "7.9.1",
   "dotenvx": "1.51.0",
   "clio-server": "2.5.0",
-  "iota": "1.7.0",
+  "iota": "1.8.0",
   "lassie": "0.24.0",
   "tolk": "1.1.0"
 }
