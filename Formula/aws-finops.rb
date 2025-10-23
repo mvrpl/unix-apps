@@ -1,7 +1,7 @@
 class AwsFinops < Formula
   desc "Um painel de custos e recursos da AWS"
   homepage "https://github.com/diillson/aws-finops-dashboard-go"
-  version "1.0.0"
+  version "1.2.1"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,14 @@ class AwsFinops < Formula
   end
 
   if OS.linux? && Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/diillson/aws-finops-dashboard-go/releases/download/v1.0.0/aws-finops-linux-amd64"
-    sha256 "6745233c8e1fde3491689713ec11e4674bb587d993841a80c21ea13dd40b84bd"
+    url "https://github.com/diillson/aws-finops-dashboard-go/releases/download/v1.2.1/aws-finops-linux-amd64"
+    sha256 "ec95a031d19d178dc395212ffe1c11f6be98a333ecad56a32a60bf4e3b296f4e"
   end
 
   if OS.mac?
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/diillson/aws-finops-dashboard-go/releases/download/v1.0.0/aws-finops-darwin-amd64"
-      sha256 "6e9451add7104a5806782e93c49ad44d877c0dafa42294a1d7d3e0ffc0df0c8e"
+      url "https://github.com/diillson/aws-finops-dashboard-go/releases/download/v1.2.1/aws-finops-darwin-amd64"
+      sha256 "a5e8dd129f806a3e45221c0f3a09221919964cd85befd2d9bbc0e3100ba7a6ea"
     end
   end
 
