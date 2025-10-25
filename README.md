@@ -38,6 +38,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.lassie&style=flat&label=lassie&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/lassie.rb) `brew install lassie`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.tolk&style=flat&label=tolk&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/tolk.rb) `brew install tolk`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.hyperledger-fabric&style=flat&label=hyperledger-fabric&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/hyperledger-fabric.rb) `brew install hyperledger-fabric`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.hyperledger-fabric-ca&style=flat&label=hyperledger-fabric-ca&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/hyperledger-fabric-ca.rb) `brew install hyperledger-fabric-ca`
 
 ## GUI Applications (MacOS)
 
