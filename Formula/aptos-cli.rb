@@ -1,7 +1,7 @@
 class AptosCli < Formula
   desc "Aptos is a layer 1 blockchain built to support the widespread use of blockchain through better technology and user experience"
   homepage "https://aptosfoundation.org"
-  version "7.10.0"
+  version "7.10.1"
   license "Apache-2.0"
 
   livecheck do
@@ -19,23 +19,23 @@ class AptosCli < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v7.10.0/aptos-cli-7.10.0-Linux-aarch64.zip"
-      sha256 "72d81b72c195439a1c21d63a2cce466f1cf66581cab32fc22be7a3855650b0ca"
+      url "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v7.10.1/aptos-cli-7.10.1-Linux-aarch64.zip"
+      sha256 "99c888a46e95f8d66c268a079c1581a71840e681312ab1b4f5864621f6f7d82c"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v7.10.0/aptos-cli-7.10.0-Linux-x86_64.zip"
-      sha256 "66db5559ec08386e215474f0fec6a595989fd354d859c2b0afc98e8f6812ab81"
+      url "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v7.10.1/aptos-cli-7.10.1-Linux-x86_64.zip"
+      sha256 "12622295237129765e90db97572f9a5fbe4652dee3757e119900aa7911bf375c"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v7.10.0/aptos-cli-7.10.0-macOS-arm64.zip"
-      sha256 "1d8261d2d41b9907f33af23fd256f87ece0cff7e6d6d938715319d7f74829e60"
+      url "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v7.10.1/aptos-cli-7.10.1-macOS-arm64.zip"
+      sha256 "7a5d1014afbe357cea64a03bc1cec65757bdf11eb1ea839322985fa3023f0f29"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v7.10.0/aptos-cli-7.10.0-macOS-x86_64.zip"
-      sha256 "01f82558b13b97ef5e5e17daf819a91cb99c88d8a7e0d63fd9a4c35544700339"
+      url "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v7.10.1/aptos-cli-7.10.1-macOS-x86_64.zip"
+      sha256 "0bbb5869e208f28f066a690db4f6266b6ddcaa60bb4818006b24c7fc64d47235"
     end
   end
 
