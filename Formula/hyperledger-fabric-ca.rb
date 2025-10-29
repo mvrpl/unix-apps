@@ -36,6 +36,7 @@ class HyperledgerFabricCa < Formula
 
   def install
     system "ls -lR ."
-    bin.install Dir["./bin/*"]
+    bin.install "./bin/fabric-ca-client" => "fabric-ca-client"
+    bin.install "./bin/fabric-ca-server" => "fabric-ca-server"
   end
 end
