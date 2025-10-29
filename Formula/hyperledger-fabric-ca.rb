@@ -35,6 +35,10 @@ class HyperledgerFabricCa < Formula
   end
 
   def install
+    (bin/"my-script").write <<~EOS
+      #!/bin/bash
+      echo "Hello from my script!"
+    EOS
     bin.install Dir["./bin/*"]
   end
 end
