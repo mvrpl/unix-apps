@@ -35,6 +35,7 @@ class HyperledgerFabricCa < Formula
   end
 
   def install
-    bin.install Dir["bin/*"]
+    system "ls -lR #{prefix}"
+    bin.install Dir["./bin/*"]
   end
 end
