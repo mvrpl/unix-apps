@@ -1,4 +1,4 @@
-class HyperledgerFabricca < Formula
+class HyperledgerFabricCa < Formula
   desc "Hyperledger Fabric Certificate Authority Server and Client"
   homepage "https://github.com/hyperledger/fabric-ca"
   version "1.5.15"
