@@ -1,4 +1,4 @@
-class HyperledgerFabricCa < Formula
+class HyperledgerFabricca < Formula
   desc "Hyperledger Fabric Certificate Authority Server and Client"
   homepage "https://github.com/hyperledger/fabric-ca"
   version "1.5.15"
@@ -35,8 +35,6 @@ class HyperledgerFabricCa < Formula
   end
 
   def install
-    system "ls -lR ."
-    bin.install "./bin/fabric-ca-client" => "fabric-ca-client"
-    bin.install "./bin/fabric-ca-server" => "fabric-ca-server"
+    bin.install Dir["./bin/*"]
   end
 end
