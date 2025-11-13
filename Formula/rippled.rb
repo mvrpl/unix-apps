@@ -16,13 +16,13 @@ class Rippled < Formula
   depends_on "gcc" => :build
 
   if OS.mac?
-    url "https://github.com/XRPLF/rippled/archive/refs/tags/2.6.1.zip"
-    sha256 "9d4f940282665eaf26edd93919a22b84d2bcd73500e9ee342dc5036de7248a14"
+    url "https://github.com/XRPLF/rippled/archive/refs/tags/2.6.1.tar.gz"
+    sha256 "b57c90e86dd32ef9ce00081fd348ec01f55131677dce7acba8b69939c1581466"
   end
 
   def install
     if OS.mac?
-      system "cd", "rippled-2.6.1"
+      system "cd", "rippled-*"
       system "conan", "config", "install", "conan/profiles/", "-tf", "$(conan config home)/profiles/"
       system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
       system "mkdir", ".build"
