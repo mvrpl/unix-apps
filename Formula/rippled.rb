@@ -22,13 +22,15 @@ class Rippled < Formula
 
   def install
     if OS.mac?
-      system "conan", "config", "install", "conan/profiles/", "-tf", "$(conan config home)/profiles/"
-      system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
-      system "mkdir", ".build"
-      system "cd", ".build"
-      system "conan", "install", "..", "--output-folder", ".", "--build", "missing", "--settings", "build_type=Release"
-      system "cmake", "-DCMAKE_TOOLCHAIN_FILE:FILEPATH=build/generators/conan_toolchain.cmake", "-DCMAKE_BUILD_TYPE=Release", "-Dxrpld=ON", "-Dtests=ON", ".."
-      system "cmake", "--build", ".", "--config", "Release"
+      Dir.chdir("rippled-*") do
+        system "conan", "config", "install", "conan/profiles/", "-tf", "$(conan config home)/profiles/"
+        system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
+        system "mkdir", ".build"
+        system "cd", ".build"
+        system "conan", "install", "..", "--output-folder", ".", "--build", "missing", "--settings", "build_type=Release"
+        system "cmake", "-DCMAKE_TOOLCHAIN_FILE:FILEPATH=build/generators/conan_toolchain.cmake", "-DCMAKE_BUILD_TYPE=Release", "-Dxrpld=ON", "-Dtests=ON", ".."
+        system "cmake", "--build", ".", "--config", "Release"
+      end
     end
 
     bin.install "./.build/Release/rippled" => "rippled"
