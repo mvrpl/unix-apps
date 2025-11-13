@@ -22,10 +22,10 @@ class Rippled < Formula
 
   def install
     if OS.mac?
-      ("build.sh").write <<~EOS
+      "build.sh".write <<~SH
         #!/bin/bash
         echo "This is a placeholder for the 'dafny' executable."
-      EOS
+      SH
       system "chmod", "+x", "build.sh"
       system "./build.sh"
     end
