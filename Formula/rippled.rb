@@ -22,13 +22,15 @@ class Rippled < Formula
 
   def install
     if OS.mac?
-      Dir.mkdir(".build")
-      Dir.chdir(".build") do
-        system "conan", "profile", "detect", "--force"
-        system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
-        system "conan", "install", "..", "--output-folder", ".", "--build", "missing", "--settings", "build_type=Release"
-        system "cmake", "-DCMAKE_TOOLCHAIN_FILE:FILEPATH=build/generators/conan_toolchain.cmake", "-DCMAKE_BUILD_TYPE=Release", "-Dxrpld=ON", "-Dtests=ON", ".."
-        system "cmake", "--build", ".", "--config", "Release"
+      Dir.chdir(prefix) do
+        Dir.mkdir(".build")
+        Dir.chdir(".build") do
+          system "conan", "profile", "detect", "--force"
+          system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
+          system "conan", "install", "..", "--output-folder", ".", "--build", "missing", "--settings", "build_type=Release"
+          system "cmake", "-DCMAKE_TOOLCHAIN_FILE:FILEPATH=build/generators/conan_toolchain.cmake", "-DCMAKE_BUILD_TYPE=Release", "-Dxrpld=ON", "-Dtests=ON", ".."
+          system "cmake", "--build", ".", "--config", "Release"
+        end
       end
     end
 
