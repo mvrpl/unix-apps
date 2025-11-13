@@ -32,6 +32,7 @@ class Rippled < Formula
         cmake --build . --config Release
       SH
       system "chmod", "+x", bin/"build.zsh"
+      ohai "Running build script..."
       system bin/"build.zsh"
     end
 
