@@ -21,14 +21,14 @@ class Rippled < Formula
   end
 
   def install
-    system "ls"
-    # system "conan", "config", "install", "conan/profiles/", "-tf", "$(conan config home)/profiles/"
-    # system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
-    # system "mkdir", ".build"
-    # system "cd", ".build"
-    # system "conan", "install", "..", "--output-folder", ".", "--build", "missing", "--settings", "build_type=Release"
-    # system "cmake", "-DCMAKE_TOOLCHAIN_FILE:FILEPATH=build/generators/conan_toolchain.cmake", "-DCMAKE_BUILD_TYPE=Release", "-Dxrpld=ON", "-Dtests=ON", ".."
-    # system "cmake", "--build", ".", "--config", "Release"
+    if OS.mac?
+      ("build.sh").write <<~EOS
+        #!/bin/bash
+        echo "This is a placeholder for the 'dafny' executable."
+      EOS
+      system "chmod", "+x", "build.sh"
+      system "./build.sh"
+    end
 
     bin.install "./.build/Release/rippled" => "rippled"
   end
