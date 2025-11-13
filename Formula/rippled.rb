@@ -22,12 +22,12 @@ class Rippled < Formula
 
   def install
     if OS.mac?
-      "build.sh".write <<~SH
+      (bin/"build.sh").write <<~SH
         #!/bin/bash
         echo "This is a placeholder for the 'dafny' executable."
       SH
-      system "chmod", "+x", "build.sh"
-      system "./build.sh"
+      system "chmod", "+x", bin/"build.sh"
+      system bin/"build.sh"
     end
 
     bin.install "./.build/Release/rippled" => "rippled"
