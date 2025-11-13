@@ -22,8 +22,8 @@ class Rippled < Formula
 
   def install
     if OS.mac?
-      (bin/"build.sh").write <<~SH
-        #!/bin/bash
+      (bin/"build.zsh").write <<~SH
+        #!/bin/zsh
         conan config install conan/profiles/ -tf $(conan config home)/profiles/
         conan remote add --index 0 xrplf --force https://conan.ripplex.io
         mkdir .build && cd .build
@@ -31,8 +31,8 @@ class Rippled < Formula
         cmake -DCMAKE_TOOLCHAIN_FILE:FILEPATH=build/generators/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release -Dxrpld=ON -Dtests=ON ..
         cmake --build . --config Release
       SH
-      system "chmod", "+x", bin/"build.sh"
-      system bin/"build.sh"
+      system "chmod", "+x", bin/"build.zsh"
+      system bin/"build.zsh"
     end
 
     bin.install "./.build/Release/rippled" => "rippled"
