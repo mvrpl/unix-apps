@@ -22,7 +22,6 @@ class Rippled < Formula
 
   def install
     if OS.mac?
-      system "conan", "config", "install", "conan/profiles/", "-tf", "$(conan config home)/profiles/"
       system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
       system "conan", "install", ".", "--output-folder", ".", "--build", "missing", "--settings", "build_type=Release"
       system "cmake", "-DCMAKE_TOOLCHAIN_FILE:FILEPATH=build/generators/conan_toolchain.cmake", "-DCMAKE_BUILD_TYPE=Release", "-Dxrpld=ON", "-Dtests=ON", "."
