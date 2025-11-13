@@ -11,9 +11,9 @@ class Rippled < Formula
   end
 
   depends_on "python"
-  depends_on "conan"
-  depends_on "cmake"
-  depends_on "gcc"
+  depends_on "conan" => :build
+  depends_on "cmake" => :build
+  depends_on "gcc" => :build
 
   if OS.mac?
     url "https://github.com/XRPLF/rippled/archive/refs/tags/2.6.1.zip"
