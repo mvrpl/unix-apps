@@ -22,7 +22,7 @@ class Rippled < Formula
 
   def install
     if OS.mac?
-      system "cd", "rippled-*"
+      system "cd", "rippled-2.6.1"
       system "conan", "config", "install", "conan/profiles/", "-tf", "$(conan config home)/profiles/"
       system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
       system "mkdir", ".build"
