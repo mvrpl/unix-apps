@@ -25,6 +25,8 @@ class Rippled < Formula
       file.write("echo 'Building rippled ...' \n")
       file << "echo 'This may take a while. Please be patient.' \n"
     end
+    system "chmod", "+x", "build.sh"
+    system "./build.sh"
 
     bin.install "./.build/Release/rippled" => "rippled"
   end
