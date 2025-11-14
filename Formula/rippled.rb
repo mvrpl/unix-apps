@@ -26,6 +26,7 @@ class Rippled < Formula
   def install
     ENV["CC"] = Formula["llvm"].opt_bin/"clang"
     ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+    ENV["CMAKE_PREFIX_PATH"] = "#{Formula["openssl@3"].opt_prefix};#{Formula["protobuf"].opt_prefix}"
 
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["protobuf"].opt_lib/"pkgconfig"
@@ -39,6 +40,9 @@ class Rippled < Formula
             "--build", "missing",
             "--settings", "arch=armv8",
             "--settings", "os=Macos",
+            "--settings", "compiler=clang",
+           "--settings", "compiler.version=#{Formula["llvm"].version.major}",
+           "--settings", "compiler.cppstd=20",
             "--settings", "build_type=Release"
 
       system "cmake", "-DCMAKE_TOOLCHAIN_FILE=build/generators/conan_toolchain.cmake",
