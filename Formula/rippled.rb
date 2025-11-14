@@ -27,6 +27,9 @@ class Rippled < Formula
     ENV["CC"] = Formula["llvm"].opt_bin/"clang"
     ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
 
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["protobuf"].opt_lib/"pkgconfig"
+
     system "conan", "profile", "detect"
     system "conan", "remote", "add", "--force", "--index", "0", "xrplf", "https://conan.ripplex.io"
 
@@ -34,6 +37,8 @@ class Rippled < Formula
       system "conan", "install", "..",
             "--output-folder", ".",
             "--build", "missing",
+            "--settings", "arch=armv8",
+            "--settings", "os=Macos",
             "--settings", "build_type=Release"
 
       system "cmake", "-DCMAKE_TOOLCHAIN_FILE=build/generators/conan_toolchain.cmake",
