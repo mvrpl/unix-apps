@@ -23,8 +23,8 @@ class Rippled < Formula
 
   def install
     if OS.mac?
-      Dir.mkdir(".build")
-      Dir.chdir(".build") do
+      Dir.mkdir("buildd")
+      Dir.chdir("buildd") do
         grpc = Formula["grpc"]
         args = %W[
           -DWITH_GRPC_INCLUDEDIR=#{grpc.opt_include}
@@ -41,6 +41,6 @@ class Rippled < Formula
       end
     end
 
-    bin.install "./.build/Release/rippled" => "rippled"
+    bin.install "./buildd/Release/rippled" => "rippled"
   end
 end
