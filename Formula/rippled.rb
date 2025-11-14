@@ -43,6 +43,7 @@ class Rippled < Formula
                       ".."
 
       system "cmake", "--build", "."
+    end
 
     bin.install "rippled"
   end
