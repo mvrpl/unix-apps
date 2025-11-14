@@ -10,11 +10,13 @@ class Rippled < Formula
     strategy :github_latest
   end
 
-  depends_on "python"
-  depends_on "conan" => :build
   depends_on "cmake" => :build
-  depends_on "gcc" => :build
-  depends_on "grpc"
+  depends_on "conan" => :build
+  depends_on "pkg-config" => :build
+  depends_on "python@3.11"
+  depends_on "llvm"
+  depends_on "openssl@3"
+  depends_on "protobuf"
 
   if OS.mac?
     url "https://github.com/XRPLF/rippled/archive/refs/tags/2.6.1.tar.gz"
@@ -23,24 +25,28 @@ class Rippled < Formula
 
   def install
     if OS.mac?
-      Dir.mkdir("buildd")
-      Dir.chdir("buildd") do
-        grpc = Formula["grpc"]
-        args = %W[
-          -DWITH_GRPC_INCLUDEDIR=#{grpc.opt_include}
-          -DWITH_GRPC_LIBDIR=#{grpc.opt_lib}
-          -DCMAKE_INSTALL_BINDIR=bin
-          -DCMAKE_INSTALL_LIBDIR=lib
-          -DCMAKE_INSTALL_INCLUDEDIR=include
-        ]
-        system "conan", "profile", "detect", "--force"
-        system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
-        system "conan", "install", "..", "--output-folder", ".", "--build", "missing", "--settings", "build_type=Release"
-        system "cmake", "-DCMAKE_TOOLCHAIN_FILE:FILEPATH=build/generators/conan_toolchain.cmake", "-DCMAKE_BUILD_TYPE=Release", "-Dxrpld=ON", "-Dtests=ON", ".."
-        system "cmake", "--build", ".", "--config", "Release", *args, *std_cmake_args
-      end
+      ENV["CC"] = Formula["llvm"].opt_bin/"clang"
+      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+
+      system "conan", "profile", "detect"
+      system "conan", "remote", "add", "--force", "--index", "0", "xrplf", "https://conan.ripplex.io"
+
+      mkdir "build" do
+        system "conan", "install", "..",
+              "--output-folder", ".",
+              "--build", "missing",
+              "--settings", "build_type=Release"
+
+        system "cmake", "-DCMAKE_TOOLCHAIN_FILE=build/generators/conan_toolchain.cmake",
+                        "-DCMAKE_BUILD_TYPE=Release",
+                        "-Dxrpld=ON",
+                        "-Dtests=OFF",
+                        ".."
+
+        # Build rippled
+        system "cmake", "--build", "."
     end
 
-    bin.install "./buildd/Release/rippled" => "rippled"
+    bin.install "rippled"
   end
 end
