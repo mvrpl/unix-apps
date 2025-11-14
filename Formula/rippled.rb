@@ -24,21 +24,21 @@ class Rippled < Formula
   def install
     if OS.mac?
       Dir.mkdir(".build")
-      Dir.chdir(".build")
-      grpc = Formula["grpc"]
-      args = %W[
-        -DWITH_GRPC_INCLUDEDIR=#{grpc.opt_include}
-        -DWITH_GRPC_LIBDIR=#{grpc.opt_lib}
-        -DCMAKE_INSTALL_BINDIR=bin
-        -DCMAKE_INSTALL_LIBDIR=lib
-        -DCMAKE_INSTALL_INCLUDEDIR=include
-      ]
-      system "conan", "profile", "detect", "--force"
-      system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
-      system "conan", "install", "..", "--output-folder", ".", "--build", "missing", "--settings", "build_type=Release"
-      system "cmake", "-DCMAKE_TOOLCHAIN_FILE:FILEPATH=build/generators/conan_toolchain.cmake", "-DCMAKE_BUILD_TYPE=Release", "-Dxrpld=ON", "-Dtests=ON", ".."
-      system "cmake", "--build", ".", "--config", "Release", *args, *std_cmake_args
-      Dir.chdir("..")
+      Dir.chdir(".build") do
+        grpc = Formula["grpc"]
+        args = %W[
+          -DWITH_GRPC_INCLUDEDIR=#{grpc.opt_include}
+          -DWITH_GRPC_LIBDIR=#{grpc.opt_lib}
+          -DCMAKE_INSTALL_BINDIR=bin
+          -DCMAKE_INSTALL_LIBDIR=lib
+          -DCMAKE_INSTALL_INCLUDEDIR=include
+        ]
+        system "conan", "profile", "detect", "--force"
+        system "conan", "remote", "add", "--index", "0", "xrplf", "--force", "https://conan.ripplex.io"
+        system "conan", "install", "..", "--output-folder", ".", "--build", "missing", "--settings", "build_type=Release"
+        system "cmake", "-DCMAKE_TOOLCHAIN_FILE:FILEPATH=build/generators/conan_toolchain.cmake", "-DCMAKE_BUILD_TYPE=Release", "-Dxrpld=ON", "-Dtests=ON", ".."
+        system "cmake", "--build", ".", "--config", "Release", *args, *std_cmake_args
+      end
     end
 
     bin.install "./.build/Release/rippled" => "rippled"
