@@ -24,28 +24,25 @@ class Rippled < Formula
   end
 
   def install
-    if OS.mac?
-      ENV["CC"] = Formula["llvm"].opt_bin/"clang"
-      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+    ENV["CC"] = Formula["llvm"].opt_bin/"clang"
+    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
 
-      system "conan", "profile", "detect"
-      system "conan", "remote", "add", "--force", "--index", "0", "xrplf", "https://conan.ripplex.io"
+    system "conan", "profile", "detect"
+    system "conan", "remote", "add", "--force", "--index", "0", "xrplf", "https://conan.ripplex.io"
 
-      mkdir "build" do
-        system "conan", "install", "..",
-              "--output-folder", ".",
-              "--build", "missing",
-              "--settings", "build_type=Release"
+    mkdir "build" do
+      system "conan", "install", "..",
+            "--output-folder", ".",
+            "--build", "missing",
+            "--settings", "build_type=Release"
 
-        system "cmake", "-DCMAKE_TOOLCHAIN_FILE=build/generators/conan_toolchain.cmake",
-                        "-DCMAKE_BUILD_TYPE=Release",
-                        "-Dxrpld=ON",
-                        "-Dtests=OFF",
-                        ".."
+      system "cmake", "-DCMAKE_TOOLCHAIN_FILE=build/generators/conan_toolchain.cmake",
+                      "-DCMAKE_BUILD_TYPE=Release",
+                      "-Dxrpld=ON",
+                      "-Dtests=OFF",
+                      ".."
 
-        # Build rippled
-        system "cmake", "--build", "."
-    end
+      system "cmake", "--build", "."
 
     bin.install "rippled"
   end
