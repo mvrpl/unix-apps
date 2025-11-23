@@ -12,38 +12,24 @@ class Rippled < Formula
 
   depends_on "cmake" => :build
   depends_on "conan" => :build
-  depends_on "pkg-config" => :build
+  depends_on "protobuf" => :build
+  depends_on "grpc" => :build
   depends_on "python@3.11"
-  depends_on "llvm"
-  depends_on "openssl@3"
-  depends_on "protobuf"
 
-  if OS.mac?
+  if OS.mac? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/XRPLF/rippled/archive/refs/tags/2.6.1.tar.gz"
     sha256 "b57c90e86dd32ef9ce00081fd348ec01f55131677dce7acba8b69939c1581466"
   end
 
   def install
-    ENV["CC"] = Formula["llvm"].opt_bin/"clang"
-    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-    ENV["CMAKE_PREFIX_PATH"] = "#{Formula["openssl@3"].opt_prefix};#{Formula["protobuf"].opt_prefix}"
-
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["protobuf"].opt_lib/"pkgconfig"
-
     system "conan", "profile", "detect"
     system "conan", "remote", "add", "--force", "--index", "0", "xrplf", "https://conan.ripplex.io"
 
-    mkdir "build" do
+    mkdir ".build" do
       system "conan", "install", "..",
-            "--output-folder", ".",
-            "--build", "missing",
-            "--settings", "arch=armv8",
-            "--settings", "os=Macos",
-            "--settings", "compiler=clang",
-           "--settings", "compiler.version=#{Formula["llvm"].version.major}",
-           "--settings", "compiler.cppstd=20",
-            "--settings", "build_type=Release"
+             "--output-folder", ".",
+             "--build", "missing",
+             "--settings", "build_type=Release"
 
       system "cmake", "-DCMAKE_TOOLCHAIN_FILE=build/generators/conan_toolchain.cmake",
                       "-DCMAKE_BUILD_TYPE=Release",
