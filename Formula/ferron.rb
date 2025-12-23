@@ -1,7 +1,7 @@
 class Ferron < Formula
   desc "A fast, memory-safe web server written in Rust"
   homepage "https://www.ferronweb.org"
-  version "1.3.6"
+  version "1.3.7"
   license "MIT"
 
   livecheck do
@@ -12,25 +12,25 @@ class Ferron < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://downloads.ferronweb.org/1.3.6/ferron-1.3.6-aarch64-unknown-linux-gnu.zip"
-      sha256 "596b3b037a80417fa9542030dcb124630f65b286aecb4ac805053bd700149f23"
+      url "https://downloads.ferronweb.org/1.3.7/ferron-1.3.7-aarch64-unknown-linux-gnu.zip"
+      sha256 "7a93abfacf9a5d7e88d8bd79e494f7762a1b5cd50e45dee38b477b0431a1b7ff"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://downloads.ferronweb.org/1.3.6/ferron-1.3.6-x86_64-unknown-linux-gnu.zip"
-      sha256 "7cb5b4c0efd0db0ec82e8508905d1c5d2fe077bfa733035e20121ca6f1fabbc5"
+      url "https://downloads.ferronweb.org/1.3.7/ferron-1.3.7-x86_64-unknown-linux-gnu.zip"
+      sha256 "0baf421685f672d5550723bc883369e4a7349c27b3d5f487a91c5c66604ddd1e"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://downloads.ferronweb.org/1.3.6/ferron-1.3.6-aarch64-apple-darwin.zip"
-      sha256 "b9acc5283ae1f4638b6f0372609deceb9fc7c3356621d551c040e7e68354c11a"
+      url "https://downloads.ferronweb.org/1.3.7/ferron-1.3.7-aarch64-apple-darwin.zip"
+      sha256 "30536d16d86fae16d4e6e13c2a5f17975d0b348a1e0e00233ca522efb2a98106"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://downloads.ferronweb.org/1.3.6/ferron-1.3.6-x86_64-apple-darwin.zip"
-      sha256 "a37963c8fae3922e0e925c47da34244d82abd2c1cabca7e1145f90d950dbbaf2"
+      url "https://downloads.ferronweb.org/1.3.7/ferron-1.3.7-x86_64-apple-darwin.zip"
+      sha256 "a59dbf88ea58d23f239e2c81afba74ce8149f0fbb0f7de612cf190209eca4b48"
     end
   end
 
