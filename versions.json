@@ -20,7 +20,7 @@
   "aws-finops": "1.3.0",
   "ferron": "1.3.7",
   "aptos-cli": "7.14.1",
-  "dotenvx": "1.51.4",
+  "dotenvx": "1.52.0",
   "clio-server": "2.7.0",
   "iota": "1.14.1",
   "lassie": "0.24.0",
