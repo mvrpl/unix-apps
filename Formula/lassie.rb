@@ -1,7 +1,7 @@
 class Lassie < Formula
   desc "A minimal universal retrieval client library for IPFS and Filecoin"
   homepage "https://github.com/filecoin-project/lassie"
-  version "0.24.0"
+  version "0.25.0"
   license "MIT"
 
   livecheck do
@@ -12,19 +12,19 @@ class Lassie < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/filecoin-project/lassie/releases/download/v0.24.0/lassie_0.24.0_linux_arm64.tar.gz"
-      sha256 "b55acacaf4c88ced24c854e5e9b202d249a94a26e27b0fbb1954841f33bdb386"
+      url "https://github.com/filecoin-project/lassie/releases/download/v0.25.0/lassie_0.25.0_linux_arm64.tar.gz"
+      sha256 "4d51f114897e4ae87b33b8fc4232a1c7f33136c931640c8d0925e11cd0b06317"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/filecoin-project/lassie/releases/download/v0.24.0/lassie_0.24.0_linux_amd64.tar.gz"
-      sha256 "ababb16d2e9c7c926b97f78ebb7fc1e21ae0b011abc1f611cc6a9a9ae7c8fe59"
+      url "https://github.com/filecoin-project/lassie/releases/download/v0.25.0/lassie_0.25.0_linux_amd64.tar.gz"
+      sha256 "cbd81ce9625a7db346a1c7f3bb67d4654fba4af0d8c5bdfdd1c0aaddd2c76286"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/filecoin-project/lassie/releases/download/v0.24.0/lassie_0.24.0_mac_os_all.zip"
-      sha256 "317ac0e33b8df25600d5568ea92d1fd3eb8a609573cd501730f438c3e822abd6"
+      url "https://github.com/filecoin-project/lassie/releases/download/v0.25.0/lassie_0.25.0_mac_os_all.zip"
+      sha256 "da53e6291b63de6db9b42774c2129b005dff5d0fccf939b23bdd92877154cf39"
     end
   end
 
