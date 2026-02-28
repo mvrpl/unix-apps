@@ -2,7 +2,7 @@
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)](#)
 [![macOS](https://img.shields.io/badge/Mac%20OS-000000?style=flat&logo=apple&logoColor=F0F0F0)](#)
 
-# Homebrew Fomrulas
+# Homebrew Formulas
 
 Applications not found in main or extras
 
