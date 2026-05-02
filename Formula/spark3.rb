@@ -27,7 +27,7 @@ class Spark3 < Formula
     renamed_bins.each do |original, renamed|
       (bin/renamed).write <<~EOS
         #!/bin/bash
-        export JAVA_HOME="#{Language::Java.overridable_java_home_env("17")}"
+        export JAVA_HOME="#{Formula["openjdk@17"].prefix}"
         #{prefix}/libexec/bin/#{original} "$@"
       EOS
     end
