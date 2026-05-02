@@ -12,6 +12,7 @@ class Spark3 < Formula
   end
 
   depends_on "openjdk@17"
+  depends_on "python@3.12"
 
   def install
     rm(Dir["bin/*.cmd"])
@@ -20,9 +21,16 @@ class Spark3 < Formula
     renamed_bins = {
       "spark-shell"  => "spark3-shell",
       "spark-submit" => "spark3-submit",
-      "pyspark" => "pyspark3",
       "spark-sql" => "spark3-sql"
     }
+
+    (bin/"pyspark3").write <<~EOS
+      #!/bin/bash
+      export PYSPARK_DRIVER_PYTHON="#{Formula["python@3.12"].prefix}/bin/python3.12"
+      export PYSPARK_PYTHON="#{Formula["python@3.12"].prefix}/bin/python3.12"
+      export JAVA_HOME="#{Formula["openjdk@17"].prefix}"
+      #{prefix}/libexec/bin/pyspark "$@"
+    EOS
 
     renamed_bins.each do |original, renamed|
       (bin/renamed).write <<~EOS
