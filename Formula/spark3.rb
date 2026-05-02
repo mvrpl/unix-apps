@@ -14,7 +14,9 @@ class Spark3 < Formula
   depends_on "openjdk@17"
 
   def install
-    rm_f Dir["bin/*.cmd"]
+    rm(Dir["bin/*.cmd"])
+    libexec.install Dir["*"]
+    bin.env_script_all_files(libexec/"bin", JAVA_HOME: Language::Java.overridable_java_home_env("17")[:JAVA_HOME])
 
     renamed_bins = {
       "spark-shell"  => "spark3-shell",
@@ -24,7 +26,7 @@ class Spark3 < Formula
     }
 
     renamed_bins.each do |original, renamed|
-      bin.install_symlink "spark-#{version}-bin-hadoop3/bin/#{original}" => renamed
+      bin.install libexec/"bin/#{original}" => renamed
     end
   end
 end
