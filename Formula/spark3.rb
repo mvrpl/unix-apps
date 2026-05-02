@@ -1,11 +1,15 @@
 class Spark3 < Formula
   desc "A unified analytics engine for large-scale data processing"
   homepage "https://spark.apache.org/"
-  version "4.1.1"
+  version "3.5.8"
   license "Apache-2.0"
 
-  url "https://dlcdn.apache.org/spark/spark-4.1.1/spark-4.1.1-bin-hadoop3.tgz"
-  sha256 "f5874d9d6a4935f26bc9f761467971d26812a17d94c6493b8eb4b810e7db31ae"
+  url "https://dlcdn.apache.org/spark/spark-3.5.8/spark-3.5.8-bin-hadoop3.tgz"
+  sha256 "24c24fec87ab3e1187bba320844f283ceff6036efd8108d3ae17d6911e3f6895"
+
+  livecheck do
+    skip "Reason for skipping (e.g., custom versioning, no updates)"
+  end
 
   depends_on "openjdk@17"
 
