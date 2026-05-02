@@ -16,17 +16,20 @@ class Spark3 < Formula
   def install
     rm(Dir["bin/*.cmd"])
     libexec.install Dir["*"]
-    bin.env_script_all_files(libexec/"bin", JAVA_HOME: Language::Java.overridable_java_home_env("17")[:JAVA_HOME])
 
     renamed_bins = {
       "spark-shell"  => "spark3-shell",
       "spark-submit" => "spark3-submit",
       "pyspark" => "pyspark3",
-      "spark-sql" => "spark3-sql",
+      "spark-sql" => "spark3-sql"
     }
 
     renamed_bins.each do |original, renamed|
-      bin.install libexec/"bin/#{original}" => renamed
+      (bin/renamed).write <<~EOS
+        #!/bin/bash
+        export JAVA_HOME="#{Language::Java.overridable_java_home_env("17")[:JAVA_HOME]}"
+        #{prefix}/bin/#{original} "$@"
+      EOS
     end
   end
 end
