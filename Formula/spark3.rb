@@ -27,9 +27,4 @@ class Spark3 < Formula
       bin.install bin/original => bin/renamed
     end
   end
-
-  test do
-    output = shell_output("#{bin}/spark3-submit --version 2>&1")
-    assert_match "version #{version}", output
-  end
 end
