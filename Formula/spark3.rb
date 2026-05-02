@@ -26,7 +26,7 @@ class Spark3 < Formula
     }
 
     renamed_bins.each do |original, renamed|
-      bin.install_symlink "libexec/bin/#{original}" => "libexec/bin/#{renamed}"
+      bin.install_symlink "../libexec/bin/#{original}" => "../libexec/bin/#{renamed}"
     end
   end
 end
