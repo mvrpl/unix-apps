@@ -12,8 +12,6 @@ class Spark3 < Formula
   def install
     rm_f Dir["bin/*.cmd"]
 
-    libexec.install Dir["*"]
-
     renamed_bins = {
       "spark-shell"  => "spark3-shell",
       "spark-submit" => "spark3-submit",
@@ -22,10 +20,8 @@ class Spark3 < Formula
     }
 
     renamed_bins.each do |original, renamed|
-      (bin/renamed).write_env_script libexec/"bin/#{original}", Language::Java.overridable_java_home_env("17")
+      bin.install bin/original => bin/renamed
     end
-
-    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
