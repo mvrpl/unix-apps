@@ -14,8 +14,6 @@ class Spark3 < Formula
   depends_on "openjdk@17"
 
   def install
-    libexec.install Dir["*"]
-
     rm_f Dir["bin/*.cmd"]
 
     renamed_bins = {
@@ -26,7 +24,7 @@ class Spark3 < Formula
     }
 
     renamed_bins.each do |original, renamed|
-      bin.install_symlink "../libexec/bin/#{original}" => "../libexec/bin/#{renamed}"
+      bin.install_symlink "spark-#{version}-bin-hadoop3/bin/#{original}" => renamed
     end
   end
 end
