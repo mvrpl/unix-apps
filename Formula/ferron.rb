@@ -5,9 +5,9 @@ class Ferron < Formula
   license "MIT"
 
   livecheck do
-    url 'https://downloads.ferronweb.org/latest.ferron'
-    regex(/^([\d\.]+)$/i)
-    strategy :page_match
+    url 'https://github.com/ferronweb/ferron'
+    regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
+    strategy :github_latest
   end
 
   if OS.linux?
