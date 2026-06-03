@@ -1,7 +1,7 @@
 class Iota < Formula
   desc "Bringing the real world to Web3 with a scalable, decentralized and programmable DLT infrastructure"
   homepage "https://github.com/iotaledger/iota"
-  version "1.23.2"
+  version "1.24.0"
   license "Apache-2.0"
 
   livecheck do
@@ -22,19 +22,19 @@ class Iota < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/iotaledger/iota/releases/download/v1.23.2/iota-v1.23.2-linux-arm64.tgz"
-      sha256 "7492600e9a163648f7ee88d92f68c992e404e2039ff85e52871c5e7340846a16"
+      url "https://github.com/iotaledger/iota/releases/download/v1.24.0/iota-v1.24.0-linux-arm64.tgz"
+      sha256 "4a6ffee0dc34e6c33bf6ebd4708f9edd2d887f590b02c9db13d5e96a4139c1cc"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/iotaledger/iota/releases/download/v1.23.2/iota-v1.23.2-linux-x86_64.tgz"
-      sha256 "c018af8f0f6f016166d02511bda28fb63fe56146a0bb97b0a7d510924c34245f"
+      url "https://github.com/iotaledger/iota/releases/download/v1.24.0/iota-v1.24.0-linux-x86_64.tgz"
+      sha256 "5c47f269c84ce79976e04ffc5bc09fcb53731663e7e31323360a2e585798f339"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/iotaledger/iota/releases/download/v1.23.2/iota-v1.23.2-macos-arm64.tgz"
-      sha256 "d1ff2899c14c3e2a17278d527f354a9bca3a148e1e1f08579a6500cef3905cf8"
+      url "https://github.com/iotaledger/iota/releases/download/v1.24.0/iota-v1.24.0-macos-arm64.tgz"
+      sha256 "b1447ad1c0f02a5dfb52ecdef21fbcdfc61d92e5f26ddd4ded2b7237ba3db848"
     end
   end
 
