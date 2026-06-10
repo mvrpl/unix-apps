@@ -18,6 +18,7 @@ jobs:
         id: brew-checkver
         run: |
           brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
+          brew trust mvrpl/unix-apps
           brew install jq
           echo "apps=$(brew livecheck --tap mvrpl/unix-apps --json | jq -c '.')" >> "$GITHUB_OUTPUT"
   updates:
