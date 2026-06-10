@@ -8,7 +8,16 @@ class Spark3 < Formula
   sha256 "24c24fec87ab3e1187bba320844f283ceff6036efd8108d3ae17d6911e3f6895"
 
   livecheck do
-    skip "Reason for skipping (e.g., custom versioning, no updates)"
+    url 'https://api.github.com/repos/apache/spark/tags?per_page=100'
+    regex(/^v(3\.[\d\.]+)$/i)
+    strategy :json do |json, regex|
+      json.map do |release|
+        match = release["name"]&.match(regex)
+        next if match.blank?
+
+        match[1]
+      end
+    end
   end
 
   depends_on "openjdk@17"
