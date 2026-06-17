@@ -1,7 +1,7 @@
 class Ferron < Formula
   desc "A fast, memory-safe web server written in Rust"
   homepage "https://www.ferronweb.org"
-  version "2.8.0"
+  version "2.8.1"
   license "MIT"
 
   livecheck do
@@ -12,25 +12,25 @@ class Ferron < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://downloads.ferronweb.org/2.8.0/ferron-2.8.0-aarch64-unknown-linux-gnu.zip"
-      sha256 "a61f24a92aac2450595d21e96ed503bfad748ba128bc661a5885511089f33a7b"
+      url "https://downloads.ferronweb.org/2.8.1/ferron-2.8.1-aarch64-unknown-linux-gnu.zip"
+      sha256 "d4b5174146cbbd57a83f61b52dc2f969c5afbcaeb212531416ae7d5aa9769d07"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://downloads.ferronweb.org/2.8.0/ferron-2.8.0-x86_64-unknown-linux-gnu.zip"
-      sha256 "ff55aae18634cffbd60e0324aa20eaa9d3757f4d81f12d087cc392cc06c369a5"
+      url "https://downloads.ferronweb.org/2.8.1/ferron-2.8.1-x86_64-unknown-linux-gnu.zip"
+      sha256 "3cf41cb1758c9fc653354a7fa5be2ca88a10a03a764cd82df67545216a3c5302"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://downloads.ferronweb.org/2.8.0/ferron-2.8.0-aarch64-apple-darwin.zip"
-      sha256 "093508580f74b2427b184fef05c51ccb79dfec1dbef2264ee2d68653a8a31b4d"
+      url "https://downloads.ferronweb.org/2.8.1/ferron-2.8.1-aarch64-apple-darwin.zip"
+      sha256 "a2eb94f6c46a8093822dba935fd9641bf3c0a23369296e7e6afa9b70cf25e077"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://downloads.ferronweb.org/2.8.0/ferron-2.8.0-x86_64-apple-darwin.zip"
-      sha256 "ecc0815de90cddfe1f8370ad40d5f535dd34c865f214492b91d52ae82b12438b"
+      url "https://downloads.ferronweb.org/2.8.1/ferron-2.8.1-x86_64-apple-darwin.zip"
+      sha256 "60d3d44613eb84a6262f3e0b36e61fb0712146532e8127164377f567d78fac22"
     end
   end
 
