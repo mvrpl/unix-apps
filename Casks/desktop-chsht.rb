@@ -8,7 +8,6 @@ cask 'desktop-chsht' do
   desc "Cheat Sheets GUI client"
 
   auto_updates false
-  depends_on macos: ">= :monterey"
   depends_on formula: "chsht"
 
   app "Desktop-Cheat-Sheet.app", target: "Desktop Cheat Sheet.app"
