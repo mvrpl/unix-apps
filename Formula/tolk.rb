@@ -1,7 +1,7 @@
 class Tolk < Formula
   desc "Tolk is a next-generation language for developing smart contracts on TON blockchain"
   homepage "https://github.com/ton-blockchain/ton"
-  version "1.4.1"
+  version "1.4.2"
   license "GPL-3.0"
 
   livecheck do
@@ -14,25 +14,25 @@ class Tolk < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ton-blockchain/ton/releases/download/tolk-1.4.1/tolk-linux-arm64"
-      sha256 "7cad325c7827bd4d1239f294051a53816998cb5b8de67d92c9e43a2a8abb7213"
+      url "https://github.com/ton-blockchain/ton/releases/download/tolk-1.4.2/tolk-linux-arm64"
+      sha256 "3c1b8f5d7264f9c3016771d394bf211a1a2616045bac3806f77be65da1d61055"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ton-blockchain/ton/releases/download/tolk-1.4.1/tolk-linux-x86_64"
-      sha256 "4696c724bcac452d260cae35445c580a3a5e01ccf00d92dff1a595492c76e315"
+      url "https://github.com/ton-blockchain/ton/releases/download/tolk-1.4.2/tolk-linux-x86_64"
+      sha256 "542869781fdb1dbf17524ac5d31e64e9e6e9125fb28c993c90cdd9d304437940"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ton-blockchain/ton/releases/download/tolk-1.4.1/tolk-mac-arm64"
-      sha256 "636503bb9d14d5cfe09fee8108bb6a5e179c5a5013404ba462ef16925ca43635"
+      url "https://github.com/ton-blockchain/ton/releases/download/tolk-1.4.2/tolk-mac-arm64"
+      sha256 "52c00e29aacfdd89a8bde02dba0b921ee29a8655e0166364c34da114e1e31740"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ton-blockchain/ton/releases/download/tolk-1.4.1/tolk-mac-x86-64"
-      sha256 "c7ce0f9c501d82b7e0ea417798535c92e34fef0f995fcce3229683dee02133c1"
+      url "https://github.com/ton-blockchain/ton/releases/download/tolk-1.4.2/tolk-mac-x86-64"
+      sha256 "0662f47815a163a4d7dab14bfd2f8bb54d553c1539aa515e7994e3bf17e646ce"
     end
   end
 
