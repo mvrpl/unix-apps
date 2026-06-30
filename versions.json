@@ -27,5 +27,7 @@
   "tolk": "1.4.2",
   "hyperledger-fabric": "3.1.5",
   "vixcpp": "2.5.2",
-  "spark3": "3.5.8"
+  "spark3": "3.5.8",
+  "nu-plugin-endecode": "0.113.1",
+  "nu-plugin-template": "0.113.1"
 }
