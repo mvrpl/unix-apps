@@ -1,7 +1,7 @@
 class Dotenvx < Formula
   desc "A secure dotenv from the creator of 'dotenv'"
   homepage "https://github.com/dotenvx/dotenvx"
-  version "1.75.1"
+  version "2.0.0"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,24 +12,24 @@ class Dotenvx < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dotenvx/dotenvx/releases/download/v1.75.1/dotenvx-linux-arm64.tar.gz"
-      sha256 "ccbff6d4aa4cd26e13b3ef8a07999e98361c74483ad8da055b2afdb39a69427a"
+      url "https://github.com/dotenvx/dotenvx/releases/download/v2.0.0/dotenvx-linux-arm64.tar.gz"
+      sha256 "2900835ffbcea2c67e76735e0ecfa5d2e56c96ffc9e9190a22fda968d46be095"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dotenvx/dotenvx/releases/download/v1.75.1/dotenvx-linux-x86_64.tar.gz"
-      sha256 "926d14b03a8f9cedfa7363d3bd0d274f7c4253211618622f1691adaa40a9d1ab"
+      url "https://github.com/dotenvx/dotenvx/releases/download/v2.0.0/dotenvx-linux-x86_64.tar.gz"
+      sha256 "1d1c19e003e40019f730c36acb6f26116386f2de5865868822dfdf7b51ca6a88"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dotenvx/dotenvx/releases/download/v1.75.1/dotenvx-darwin-arm64.tar.gz"
-      sha256 "4a3f52cf3dbd4e5a506f768a709b1b016193372b04b43050bc1b9c610c9b78fa"
+      url "https://github.com/dotenvx/dotenvx/releases/download/v2.0.0/dotenvx-darwin-arm64.tar.gz"
+      sha256 "5d20b787a1f87f69b6f4394445f277a04e243e21a26f0275b009c99be265b44a"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dotenvx/dotenvx/releases/download/v1.75.1/dotenvx-darwin-x86_64.tar.gz"
-      sha256 "6f42789b07cc4f69aba1cf9e7c45a0ff8ef30dd3fe4e3423f431835655bf8d34"
+      url "https://github.com/dotenvx/dotenvx/releases/download/v2.0.0/dotenvx-darwin-x86_64.tar.gz"
+      sha256 "29158bd3e8e468588f810861c7170afe893d557dbba70d49c9be108d36f8cbfe"
     end
   end
 
