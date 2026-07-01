@@ -1,5 +1,5 @@
 class NuPluginTemplate < Formula
-  desc "A collection of Nushell plugins"
+  desc "Nushell plugin for string and HTML templating"
   homepage "https://github.com/kaathewisegit/nugins"
   version "0.113.1"
   license "MPL-2.0"
