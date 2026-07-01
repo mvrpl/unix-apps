@@ -1,5 +1,5 @@
 class NuPluginEndecode < Formula
-  desc "A collection of Nushell plugins"
+  desc "Nushell plugin for more encoding schemes for encode and decode"
   homepage "https://github.com/kaathewisegit/nugins"
   version "0.113.1"
   license "MPL-2.0"
