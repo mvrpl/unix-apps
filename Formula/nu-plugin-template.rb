@@ -25,7 +25,7 @@ class NuPluginTemplate < Formula
   end
 
   def post_install
-    system "plugin", "add", "#{prefix}/libexec/nu_plugin_template"
-    system "plugin", "use", "#{prefix}/libexec/nu_plugin_template"
+    system "nu", "-c", "plugin add #{prefix}/libexec/nu_plugin_template"
+    system "nu", "-c", "plugin use #{prefix}/libexec/nu_plugin_template"
   end
 end
