@@ -25,6 +25,6 @@ class NuPluginEndecode < Formula
   end
 
   def post_install
-    system "plugin", "add", "\"#{prefix}/libexec/nu_plugin_endecode\""
+    system "nu", "-c", "plugin add #{prefix}/libexec/nu_plugin_endecode"
   end
 end
