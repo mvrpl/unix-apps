@@ -22,7 +22,7 @@ class NuPluginEndecode < Formula
 
   def install
     libexec.install Dir["*"]
-    ENV.append_path "PATH", "~/.cargo/bin"
+    ENV.append_path "PATH", "#{Dir.home}/.cargo/bin"
     ENV.append_path "PATH", "#{Formula["nushell"].opt_bin}"
     system "nu", "-c", "plugin add \"#{prefix}/libexec/nu_plugin_endecode\""
   end
