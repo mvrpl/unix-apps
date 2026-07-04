@@ -22,9 +22,8 @@ class NuPluginTemplate < Formula
 
   def install
     libexec.install Dir["*"]
-    system "plugin", "add", "#{prefix}/libexec/nu_plugin_template"
   end
-  
+
   def post_install
     system "nu", "-c", "plugin add \"#{prefix}/libexec/nu_plugin_template\""
   end
