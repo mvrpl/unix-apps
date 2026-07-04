@@ -25,7 +25,8 @@ class NuPluginEndecode < Formula
   end
 
   def post_install
-    system "nu", "-c", "plugin add #{prefix}/libexec/nu_plugin_endecode"
-    system "nu", "-c", "plugin use #{prefix}/libexec/nu_plugin_endecode"
+    ohai "RUN THIS COMMAND IN NUSHELL TO ADD AND USE THE PLUGIN"
+    ohai "plugin add #{prefix}/libexec/nu_plugin_endecode"
+    ohai "plugin use #{prefix}/libexec/nu_plugin_endecode"
   end
 end
