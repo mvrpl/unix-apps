@@ -25,6 +25,7 @@ class NuPluginTemplate < Formula
   end
 
   def post_install
-    system "nu", "-c", "plugin add #{prefix}/libexec/nu_plugin_template"
+    system "echo", "RUN THIS COMMAND IN NUSHELL TO ADD THE PLUGIN"
+    system "echo", "plugin add #{prefix}/libexec/nu_plugin_template"
   end
 end
