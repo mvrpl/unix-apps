@@ -22,6 +22,8 @@ class NuPluginTemplate < Formula
 
   def install
     libexec.install Dir["*"]
-    #system "#{Formula["nushell"].opt_bin}/nu", "-c", "plugin add \"#{prefix}/libexec/nu_plugin_template\""
+    ENV.append_path "PATH", "~/.cargo/bin"
+    ENV.append_path "PATH", "#{Formula["nushell"].opt_bin}"
+    system "nu", "-c", "plugin add \"#{prefix}/libexec/nu_plugin_template\""
   end
 end
