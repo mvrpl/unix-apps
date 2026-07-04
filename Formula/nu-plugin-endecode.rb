@@ -22,6 +22,6 @@ class NuPluginEndecode < Formula
 
   def install
     libexec.install Dir["*"]
-    system "nu", "-c", "echo 1"
+    system "plugin", "add", "#{prefix}/libexec/nu_plugin_endecode"
   end
 end
