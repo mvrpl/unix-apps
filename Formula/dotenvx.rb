@@ -1,7 +1,7 @@
 class Dotenvx < Formula
   desc "A secure dotenv from the creator of 'dotenv'"
   homepage "https://github.com/dotenvx/dotenvx"
-  version "2.14.0"
+  version "2.15.1"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,24 +12,24 @@ class Dotenvx < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dotenvx/dotenvx/releases/download/v2.14.0/dotenvx-linux-arm64.tar.gz"
-      sha256 "2aab9da8fc36822a56fdfa015b8c517c64a148a5bcb4d73224732fb75e3bcade"
+      url "https://github.com/dotenvx/dotenvx/releases/download/v2.15.1/dotenvx-linux-arm64.tar.gz"
+      sha256 "1e2f865f7a8ed80eba8ad0e06bd86d5f9e4627c73d9c949347a1630e681b0744"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dotenvx/dotenvx/releases/download/v2.14.0/dotenvx-linux-x86_64.tar.gz"
-      sha256 "6726c0f40e703fd860ae9a67573d0d2e6dceae3bf23a6365faaf514f25545c9c"
+      url "https://github.com/dotenvx/dotenvx/releases/download/v2.15.1/dotenvx-linux-x86_64.tar.gz"
+      sha256 "7f783106cdca4ac67b6c736d60a435bcae4148a235a5555fd286a2734e5096ef"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dotenvx/dotenvx/releases/download/v2.14.0/dotenvx-darwin-arm64.tar.gz"
-      sha256 "76ae9b1a9326d2f78a11144aefaf6d343ef888958057c430bb7b84fffbacfe82"
+      url "https://github.com/dotenvx/dotenvx/releases/download/v2.15.1/dotenvx-darwin-arm64.tar.gz"
+      sha256 "d939b34654cfc72a037c2603e012f3c9956e5512f9a87f9e60a9c59c9952798a"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dotenvx/dotenvx/releases/download/v2.14.0/dotenvx-darwin-x86_64.tar.gz"
-      sha256 "ce9da5ae19f80f0e54efe3b7dc8760bdbe8246eb80391819adf5e07a3099514e"
+      url "https://github.com/dotenvx/dotenvx/releases/download/v2.15.1/dotenvx-darwin-x86_64.tar.gz"
+      sha256 "d9d317e06ac4b68bda96278aaad67aadf24eb0b97239d085ee5c9ea06c483f30"
     end
   end
 
