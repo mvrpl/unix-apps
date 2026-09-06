@@ -43,6 +43,7 @@ brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.nu-plugin-template&style=flat&label=nu-plugin-template&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/nu-plugin-template.rb) `brew install nu-plugin-template`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.nu-plugin-endecode&style=flat&label=nu-plugin-endecode&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/nu-plugin-endecode.rb) `brew install nu-plugin-endecode`
 - [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.cron-simulator&style=flat&label=cron-simulator&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/cron-simulator.rb) `brew install cron-simulator`
+- [![Brew Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmvrpl%2Funix-apps%2Frefs%2Fheads%2Fmain%2Fversions.json&query=%24.redpanda-connect&style=flat&label=redpanda-connect&color=%23701516)](https://github.com/mvrpl/unix-apps/blob/main/Formula/redpanda-connect.rb) `brew install redpanda-connect`
 
 ## GUI Applications (MacOS)
 
