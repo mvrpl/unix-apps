@@ -31,5 +31,5 @@
   "nu-plugin-endecode": "0.113.1",
   "nu-plugin-template": "0.113.1",
   "cron-simulator": "1.0.0",
-  "redpanda-connect": "4.108.0"
+  "redpanda-connect": "4.109.0"
 }
