@@ -16,9 +16,10 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9
       - name: Livecheck brew
         id: brew-checkver
+        env:
+          HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
         run: |
-          brew tap mvrpl/unix-apps
-          brew trust mvrpl/unix-apps
+          brew tap mvrpl/unix-apps https://github.com/mvrpl/unix-apps
           brew install jq
           echo "apps=$(brew livecheck --tap mvrpl/unix-apps --json | jq -c '.')" >> "$GITHUB_OUTPUT"
   updates:
