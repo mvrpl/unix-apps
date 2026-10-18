@@ -8,7 +8,7 @@ cask 'dockit' do
     desc "NoSQL/NewSQL GUI client"
 
     auto_updates false
-    depends_on macos: ">= :monterey"
+    depends_on macos: :monterey
 
     app "DocKit.app"
 
