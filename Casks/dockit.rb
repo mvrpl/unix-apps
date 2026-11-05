@@ -1,14 +1,14 @@
 cask 'dockit' do
-    version "1.4.5"
-    sha256 "4e038f959bcbe756e1b0e5be63c947335d37b80ab91a81a56c747ef494cb92f2"
+    version "2.0.1"
+    sha256 "b4c0c2a147a2985e16d54caea428c6e8b5a46085c9f306aa5b1a31d49a700faa"
 
-    url "https://github.com/geek-fun/dockit/releases/download/v1.4.5/DocKit_1.4.5_universal.dmg"
+    url "https://github.com/geek-fun/dockit/releases/download/v2.0.1/DocKit_2.0.1_universal.dmg"
     name "DocKit"
     homepage "https://dockit.geekfun.club"
     desc "NoSQL/NewSQL GUI client"
 
     auto_updates false
-    depends_on macos: ">= :monterey"
+    depends_on macos: :monterey
 
     app "DocKit.app"
 
