@@ -37,13 +37,13 @@ jobs:
         env:
           APPS: ${{needs.brew-livecheck.outputs.json-apps}}
         run: |
-          sudo apt-get install -y coreutils pcregrep
+          sudo apt-get install -y coreutils pcre2-utils
           brew install jq
           rm -f /tmp/.hashfailf
           touch /tmp/.hashfailf
           update_version () { if [ ! -f ./Formula/${1}.rb ];then return 0;fi;formula=$1;new_version=$2;old_version=$3;awk -v old="$old_version" -v new="$new_version" '{if ($0 ~ /(url|version|bin\.install)/) {gsub(old, new, $0)};print $0 >"awk.out"}' ./Formula/${formula}.rb;mv awk.out ./Formula/${formula}.rb; }
           export -f update_version
-          update_hashs () { if [ ! -f ./Formula/${1}.rb ];then return 0;fi;formula=$1;paste -d ' ' <(pcregrep -o1 'url.*"(.*)"' ./Formula/${formula}.rb) <(pcregrep -o1 'sha256.*"(.*)"' ./Formula/${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL --fail $1 | sha256sum | cut -d " " -f 1;test ${PIPESTATUS[0]} -eq 0 || { echo "'${formula}'" >> /tmp/.hashfailf; });sed -ri "s/$2/$hash/g" ./Formula/'${formula}'.rb' bash; }
+          update_hashs () { if [ ! -f ./Formula/${1}.rb ];then return 0;fi;formula=$1;paste -d ' ' <(pcre2grep -o1 'url.*"(.*)"' ./Formula/${formula}.rb) <(pcre2grep -o1 'sha256.*"(.*)"' ./Formula/${formula}.rb) | xargs -L1 bash -c 'hash=$(curl -sL --fail $1 | sha256sum | cut -d " " -f 1;test ${PIPESTATUS[0]} -eq 0 || { echo "'${formula}'" >> /tmp/.hashfailf; });sed -ri "s/$2/$hash/g" ./Formula/'${formula}'.rb' bash; }
           export -f update_hashs
           update_versions() { if [ ! -f ./Formula/${1}.rb ];then return 0;fi;if [ -f /tmp/.hashfailf ] && grep -qP '^'$1'$' "/tmp/.hashfailf";then return 0;fi;tmp=$(mktemp); jq '."'$1'" = "'$2'"' versions.json > "$tmp" && mv "$tmp" versions.json; }
           export -f update_versions
