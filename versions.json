@@ -33,5 +33,5 @@
   "cron-simulator": "1.0.0",
   "redpanda-connect": "4.118.0",
   "rust-rpxy": "0.14.0",
-  "open-code-review": "1.13.8"
+  "open-code-review": "1.13.9"
 }
