@@ -1,7 +1,7 @@
 class OpenCodeReview < Formula
   desc "Open Code Review brings Alibaba's battle-tested code review Agent into your workflow"
   homepage "https://open-codereview.ai"
-  version "1.13.9"
+  version "1.13.10"
   license "Apache-2.0"
 
   livecheck do
@@ -12,25 +12,25 @@ class OpenCodeReview < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alibaba/open-code-review/releases/download/v1.13.9/opencodereview-linux-arm64"
-      sha256 "76fcb0e5c6c40f5ac2c23537563de8ac3038831d5f54f800cc10896d9ee91d8c"
+      url "https://github.com/alibaba/open-code-review/releases/download/v1.13.10/opencodereview-linux-arm64"
+      sha256 "97c2ea9ce5afc9418cb9dc135ca42c03cedbd31d1be41318f73821d6239740ff"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alibaba/open-code-review/releases/download/v1.13.9/opencodereview-linux-amd64"
-      sha256 "2db294981624d6fae9bcfb4df7f9ebfd7f92c40b3a552873dff5887116931d3e"
+      url "https://github.com/alibaba/open-code-review/releases/download/v1.13.10/opencodereview-linux-amd64"
+      sha256 "8a0cbf6dfaa1d8681ad3d854971623e34b3f51c4585d2c4ae352f1ff5eee5cb8"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alibaba/open-code-review/releases/download/v1.13.9/opencodereview-darwin-arm64"
-      sha256 "a4e6fc65146475217450545d2ebc2e8ae2aab5ef0e609fc865c379235e1720c0"
+      url "https://github.com/alibaba/open-code-review/releases/download/v1.13.10/opencodereview-darwin-arm64"
+      sha256 "d1613b376593c3dcec7fe2ea8348651fef9cb812fbcd6b69b0f3fb39212bfcbc"
     end
 
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alibaba/open-code-review/releases/download/v1.13.9/opencodereview-darwin-amd64"
-      sha256 "2044f04f4195240ed0a70f54b8c1d5ff3a69a8ce2d14712dccffa7a4f4039e06"
+      url "https://github.com/alibaba/open-code-review/releases/download/v1.13.10/opencodereview-darwin-amd64"
+      sha256 "a8d1a38a6ed149201985f488ebe0707d0a503e3cc6e4eb945054452ec719760e"
     end
   end
 
