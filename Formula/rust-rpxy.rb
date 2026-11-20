@@ -1,7 +1,7 @@
 class RustRpxy < Formula
   desc "A simple and ultrafast http reverse proxy serving multiple domain names and terminating TLS for http/1.1, 2 and 3, written in Rust"
   homepage "https://github.com/junkurihara/rust-rpxy"
-  version "0.14.0"
+  version "0.14.1"
   license "MIT"
 
   livecheck do
@@ -12,12 +12,12 @@ class RustRpxy < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        url "https://github.com/junkurihara/rust-rpxy/releases/download/0.14.0/rpxy-aarch64-unknown-linux-gnu.tar.gz"
-        sha256 "7a80e3c4936793288a3c9609230cb01409d50d5b57c78a7bac26ea35c3482a29"
+        url "https://github.com/junkurihara/rust-rpxy/releases/download/0.14.1/rpxy-aarch64-unknown-linux-gnu.tar.gz"
+        sha256 "e41333606e7468359c368eddb2778fd6ab4c5d530b01d4710319e1a5602e6013"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-        url "https://github.com/junkurihara/rust-rpxy/releases/download/0.14.0/rpxy-x86_64-unknown-linux-gnu.tar.gz"
-        sha256 "890fec9de4e02b97ace2eebe159f345f64b3b1189997e264c6d943da5bb08377"
+        url "https://github.com/junkurihara/rust-rpxy/releases/download/0.14.1/rpxy-x86_64-unknown-linux-gnu.tar.gz"
+        sha256 "2edc0970d9976517577bc0447d0b42e9a46fd9481f126a2d40ffe4802cf2f728"
     end
   end
 
