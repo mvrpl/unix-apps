@@ -1,11 +1,11 @@
 class Spark3 < Formula
   desc "A unified analytics engine for large-scale data processing"
   homepage "https://spark.apache.org/"
-  version "3.5.9"
+  version "3.5.10"
   license "Apache-2.0"
 
-  url "https://dlcdn.apache.org/spark/spark-3.5.9/spark-3.5.9-bin-hadoop3.tgz"
-  sha256 "31620af875b4b7fbc58422930ada27940c1417fdee3707a029680643b943150f"
+  url "https://dlcdn.apache.org/spark/spark-3.5.10/spark-3.5.10-bin-hadoop3.tgz"
+  sha256 "e11fe2f474ad5f1bea0535efd6f7d9edb3f893aad866f16fda73fc43725f36d8"
 
   livecheck do
     url 'https://api.github.com/repos/apache/spark/tags?per_page=100'
