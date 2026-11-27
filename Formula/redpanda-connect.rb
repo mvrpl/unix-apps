@@ -1,7 +1,7 @@
 class RedpandaConnect < Formula
   desc "Fancy stream processing made operationally mundane"
   homepage "https://docs.redpanda.com/redpanda-connect"
-  version "4.119.0"
+  version "4.120.0"
   license "Apache-2.0"
 
   livecheck do
@@ -12,23 +12,23 @@ class RedpandaConnect < Formula
 
   if OS.linux?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        url "https://github.com/redpanda-data/connect/releases/download/v4.119.0/redpanda-connect_4.119.0_linux_arm64.tar.gz"
-        sha256 "70aeabb9faeb9d8850428c4b3edc106de8597e9a20a8aa868d54cb7526437acc"
+        url "https://github.com/redpanda-data/connect/releases/download/v4.120.0/redpanda-connect_4.120.0_linux_arm64.tar.gz"
+        sha256 "e0457a05e026ffe470a0b91dcda2b45b185206f28291ba78339fbf31d49e4846"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-        url "https://github.com/redpanda-data/connect/releases/download/v4.119.0/redpanda-connect_4.119.0_linux_amd64.tar.gz"
-        sha256 "def9a5b888b8f6134eef90138c4e42bc5cab022ff77dc7f37aac36b87e213c9b"
+        url "https://github.com/redpanda-data/connect/releases/download/v4.120.0/redpanda-connect_4.120.0_linux_amd64.tar.gz"
+        sha256 "122ef832257394e035a89a28e1331310b0c1b08ed8c5a4e7f98e9bcb8ea62926"
     end
   end
 
   if OS.mac?
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        url "https://github.com/redpanda-data/connect/releases/download/v4.119.0/redpanda-connect_4.119.0_darwin_arm64.tar.gz"
-        sha256 "7548748a511cff71cb662acd73dfacb0cbc36c0b5c88b28af98f3a1f24055c91"
+        url "https://github.com/redpanda-data/connect/releases/download/v4.120.0/redpanda-connect_4.120.0_darwin_arm64.tar.gz"
+        sha256 "784ca3e55599ead223ffac80499f7708e82f5a85abf61be3d53ae7669ae69bba"
     end
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-        url "https://github.com/redpanda-data/connect/releases/download/v4.119.0/redpanda-connect_4.119.0_darwin_amd64.tar.gz"
-        sha256 "6e3a8c0cdda61e24a45f41be8d0d67b2940c43b85fa2a7d2b14490b9a9d15e37"
+        url "https://github.com/redpanda-data/connect/releases/download/v4.120.0/redpanda-connect_4.120.0_darwin_amd64.tar.gz"
+        sha256 "b4bbe2af6d1a0553b008c65e5622e35a031f07d1164ba64dac54649f56f50630"
     end
   end
 
